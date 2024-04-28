@@ -13,37 +13,70 @@ struct SignUp: View {
 
     var body: some View {
         VStack {
-            TextField("First Name", text: $viewModel.firstName)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-            TextField("Last Name", text: $viewModel.lastName)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-            TextField("Email", text: $viewModel.email)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-            TextField("Username", text: $viewModel.username)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-            SecureField("Password", text: $viewModel.password)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-            SecureField("Confirm Password", text: $viewModel.confirmPassword)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
+            Spacer()
+            
+            Text("Sign Up")
+                .font(.largeTitle)
+                .foregroundColor(.white)
+            
             if let errorMessage = viewModel.errorMessage {
                 Text(errorMessage)
                     .foregroundColor(.red)
             }
+            
+            TextField("First Name", text: $viewModel.firstName)
+                .padding()
+                .background(Color.white)
+                .foregroundColor(.black)
+                .cornerRadius(5)
+            
+            TextField("Last Name", text: $viewModel.lastName)
+                .padding()
+                .background(Color.white)
+                .foregroundColor(.black)
+                .cornerRadius(5)
+            
+            TextField("Email", text: $viewModel.email)
+                .padding()
+                .background(Color.white)
+                .foregroundColor(.black)
+                .cornerRadius(5)
+            
+            TextField("Username", text: $viewModel.username)
+                .padding()
+                .background(Color.white)
+                .foregroundColor(.black)
+                .cornerRadius(5)
+            
+            SecureField("Password", text: $viewModel.password)
+                .padding()
+                .background(Color.white)
+                .foregroundColor(.black)
+                .cornerRadius(5)
+            
+            SecureField("Confirm Password", text: $viewModel.confirmPassword)
+                .padding()
+                .background(Color.white)
+                .foregroundColor(.black)
+                .cornerRadius(5)
+            
             Button("Sign Up", action: {
                 viewModel.signUp()
             })
             .padding()
-            .background(Color.blue)
+            .frame(maxWidth: .infinity)
+            .background(Color.gray)
             .foregroundColor(.white)
-            .cornerRadius(8)
+            .cornerRadius(5)
+            
+            Spacer()
         }
         .padding()
-        .navigationTitle("Sign Up")
+        .background(Color(hex: "#990000"))
+        .ignoresSafeArea()
     }
+}
+
+#Preview {
+    SignUp()
 }

@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		579430222BDF12030012DB89 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430212BDF12030012DB89 /* ColorExtension.swift */; };
+		579430242BDF18E30012DB89 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430232BDF18E30012DB89 /* MainTabView.swift */; };
+		579430262BDF19470012DB89 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430252BDF19470012DB89 /* Search.swift */; };
+		579430282BDF194F0012DB89 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430272BDF194F0012DB89 /* Favorites.swift */; };
+		5794302A2BDF195E0012DB89 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430292BDF195E0012DB89 /* Profile.swift */; };
 		57CD455C2BDEEE8600E01778 /* FryftEatsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD455B2BDEEE8600E01778 /* FryftEatsApp.swift */; };
-		57CD455E2BDEEE8600E01778 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD455D2BDEEE8600E01778 /* ContentView.swift */; };
 		57CD45602BDEEE8900E01778 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CD455F2BDEEE8900E01778 /* Assets.xcassets */; };
 		57CD45632BDEEE8900E01778 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CD45622BDEEE8900E01778 /* Preview Assets.xcassets */; };
 		57CD456D2BDEEE8A00E01778 /* FryftEatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD456C2BDEEE8A00E01778 /* FryftEatsTests.swift */; };
 		57CD45772BDEEE8A00E01778 /* FryftEatsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD45762BDEEE8A00E01778 /* FryftEatsUITests.swift */; };
 		57CD45792BDEEE8A00E01778 /* FryftEatsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD45782BDEEE8A00E01778 /* FryftEatsUITestsLaunchTests.swift */; };
-		57CD45892BDEF1F400E01778 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD45882BDEF1F400E01778 /* Home.swift */; };
 		57CD458B2BDEF30B00E01778 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD458A2BDEF30B00E01778 /* User.swift */; };
 		57CD458D2BDEF3C400E01778 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD458C2BDEF3C400E01778 /* Restaurant.swift */; };
 		57CD45912BDEF3DB00E01778 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD45902BDEF3DB00E01778 /* Comment.swift */; };
@@ -45,9 +48,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		579430212BDF12030012DB89 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		579430232BDF18E30012DB89 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		579430252BDF19470012DB89 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		579430272BDF194F0012DB89 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
+		579430292BDF195E0012DB89 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		57CD45582BDEEE8600E01778 /* FryftEats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FryftEats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57CD455B2BDEEE8600E01778 /* FryftEatsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FryftEatsApp.swift; sourceTree = "<group>"; };
-		57CD455D2BDEEE8600E01778 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		57CD455F2BDEEE8900E01778 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57CD45622BDEEE8900E01778 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		57CD45682BDEEE8A00E01778 /* FryftEatsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FryftEatsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,7 +62,6 @@
 		57CD45722BDEEE8A00E01778 /* FryftEatsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FryftEatsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57CD45762BDEEE8A00E01778 /* FryftEatsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FryftEatsUITests.swift; sourceTree = "<group>"; };
 		57CD45782BDEEE8A00E01778 /* FryftEatsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FryftEatsUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		57CD45882BDEF1F400E01778 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		57CD458A2BDEF30B00E01778 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		57CD458C2BDEF3C400E01778 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		57CD45902BDEF3DB00E01778 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -167,10 +173,12 @@
 		57CD45862BDEF07600E01778 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				57CD455D2BDEEE8600E01778 /* ContentView.swift */,
-				57CD45882BDEF1F400E01778 /* Home.swift */,
 				57CD459D2BDEFF3C00E01778 /* Login.swift */,
 				57CD45A42BDF0BF900E01778 /* SignUp.swift */,
+				579430232BDF18E30012DB89 /* MainTabView.swift */,
+				579430252BDF19470012DB89 /* Search.swift */,
+				579430272BDF194F0012DB89 /* Favorites.swift */,
+				579430292BDF195E0012DB89 /* Profile.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -196,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				57CD45A02BDF093800E01778 /* DateExtensions.swift */,
+				579430212BDF12030012DB89 /* ColorExtension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -330,17 +339,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5794302A2BDF195E0012DB89 /* Profile.swift in Sources */,
 				57CD458D2BDEF3C400E01778 /* Restaurant.swift in Sources */,
 				57CD45A32BDF0BEB00E01778 /* SignUpViewModel.swift in Sources */,
 				57CD458B2BDEF30B00E01778 /* User.swift in Sources */,
 				57CD45982BDEFEC300E01778 /* SessionManager.swift in Sources */,
-				57CD455E2BDEEE8600E01778 /* ContentView.swift in Sources */,
+				579430222BDF12030012DB89 /* ColorExtension.swift in Sources */,
 				57CD45A12BDF093900E01778 /* DateExtensions.swift in Sources */,
 				57CD45A52BDF0BF900E01778 /* SignUp.swift in Sources */,
 				57CD45932BDEF3E800E01778 /* Report.swift in Sources */,
 				57CD45912BDEF3DB00E01778 /* Comment.swift in Sources */,
-				57CD45892BDEF1F400E01778 /* Home.swift in Sources */,
 				57CD455C2BDEEE8600E01778 /* FryftEatsApp.swift in Sources */,
+				579430242BDF18E30012DB89 /* MainTabView.swift in Sources */,
+				579430262BDF19470012DB89 /* Search.swift in Sources */,
+				579430282BDF194F0012DB89 /* Favorites.swift in Sources */,
 				57CD459E2BDEFF3C00E01778 /* Login.swift in Sources */,
 				57CD459A2BDEFEE200E01778 /* LoginViewModel.swift in Sources */,
 			);
