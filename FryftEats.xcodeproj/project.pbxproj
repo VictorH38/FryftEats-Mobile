@@ -1,0 +1,587 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		57CD455C2BDEEE8600E01778 /* FryftEatsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD455B2BDEEE8600E01778 /* FryftEatsApp.swift */; };
+		57CD455E2BDEEE8600E01778 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD455D2BDEEE8600E01778 /* ContentView.swift */; };
+		57CD45602BDEEE8900E01778 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CD455F2BDEEE8900E01778 /* Assets.xcassets */; };
+		57CD45632BDEEE8900E01778 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CD45622BDEEE8900E01778 /* Preview Assets.xcassets */; };
+		57CD456D2BDEEE8A00E01778 /* FryftEatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD456C2BDEEE8A00E01778 /* FryftEatsTests.swift */; };
+		57CD45772BDEEE8A00E01778 /* FryftEatsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD45762BDEEE8A00E01778 /* FryftEatsUITests.swift */; };
+		57CD45792BDEEE8A00E01778 /* FryftEatsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD45782BDEEE8A00E01778 /* FryftEatsUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		57CD45692BDEEE8A00E01778 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 57CD45502BDEEE8600E01778 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 57CD45572BDEEE8600E01778;
+			remoteInfo = FryftEats;
+		};
+		57CD45732BDEEE8A00E01778 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 57CD45502BDEEE8600E01778 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 57CD45572BDEEE8600E01778;
+			remoteInfo = FryftEats;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		57CD45582BDEEE8600E01778 /* FryftEats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FryftEats.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		57CD455B2BDEEE8600E01778 /* FryftEatsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FryftEatsApp.swift; sourceTree = "<group>"; };
+		57CD455D2BDEEE8600E01778 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		57CD455F2BDEEE8900E01778 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		57CD45622BDEEE8900E01778 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		57CD45682BDEEE8A00E01778 /* FryftEatsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FryftEatsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		57CD456C2BDEEE8A00E01778 /* FryftEatsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FryftEatsTests.swift; sourceTree = "<group>"; };
+		57CD45722BDEEE8A00E01778 /* FryftEatsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FryftEatsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		57CD45762BDEEE8A00E01778 /* FryftEatsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FryftEatsUITests.swift; sourceTree = "<group>"; };
+		57CD45782BDEEE8A00E01778 /* FryftEatsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FryftEatsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		57CD45552BDEEE8600E01778 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57CD45652BDEEE8A00E01778 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57CD456F2BDEEE8A00E01778 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		57CD454F2BDEEE8600E01778 = {
+			isa = PBXGroup;
+			children = (
+				57CD455A2BDEEE8600E01778 /* FryftEats */,
+				57CD456B2BDEEE8A00E01778 /* FryftEatsTests */,
+				57CD45752BDEEE8A00E01778 /* FryftEatsUITests */,
+				57CD45592BDEEE8600E01778 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		57CD45592BDEEE8600E01778 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				57CD45582BDEEE8600E01778 /* FryftEats.app */,
+				57CD45682BDEEE8A00E01778 /* FryftEatsTests.xctest */,
+				57CD45722BDEEE8A00E01778 /* FryftEatsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		57CD455A2BDEEE8600E01778 /* FryftEats */ = {
+			isa = PBXGroup;
+			children = (
+				57CD455B2BDEEE8600E01778 /* FryftEatsApp.swift */,
+				57CD455D2BDEEE8600E01778 /* ContentView.swift */,
+				57CD455F2BDEEE8900E01778 /* Assets.xcassets */,
+				57CD45612BDEEE8900E01778 /* Preview Content */,
+			);
+			path = FryftEats;
+			sourceTree = "<group>";
+		};
+		57CD45612BDEEE8900E01778 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				57CD45622BDEEE8900E01778 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		57CD456B2BDEEE8A00E01778 /* FryftEatsTests */ = {
+			isa = PBXGroup;
+			children = (
+				57CD456C2BDEEE8A00E01778 /* FryftEatsTests.swift */,
+			);
+			path = FryftEatsTests;
+			sourceTree = "<group>";
+		};
+		57CD45752BDEEE8A00E01778 /* FryftEatsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				57CD45762BDEEE8A00E01778 /* FryftEatsUITests.swift */,
+				57CD45782BDEEE8A00E01778 /* FryftEatsUITestsLaunchTests.swift */,
+			);
+			path = FryftEatsUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		57CD45572BDEEE8600E01778 /* FryftEats */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57CD457C2BDEEE8A00E01778 /* Build configuration list for PBXNativeTarget "FryftEats" */;
+			buildPhases = (
+				57CD45542BDEEE8600E01778 /* Sources */,
+				57CD45552BDEEE8600E01778 /* Frameworks */,
+				57CD45562BDEEE8600E01778 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FryftEats;
+			productName = FryftEats;
+			productReference = 57CD45582BDEEE8600E01778 /* FryftEats.app */;
+			productType = "com.apple.product-type.application";
+		};
+		57CD45672BDEEE8A00E01778 /* FryftEatsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57CD457F2BDEEE8A00E01778 /* Build configuration list for PBXNativeTarget "FryftEatsTests" */;
+			buildPhases = (
+				57CD45642BDEEE8A00E01778 /* Sources */,
+				57CD45652BDEEE8A00E01778 /* Frameworks */,
+				57CD45662BDEEE8A00E01778 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				57CD456A2BDEEE8A00E01778 /* PBXTargetDependency */,
+			);
+			name = FryftEatsTests;
+			productName = FryftEatsTests;
+			productReference = 57CD45682BDEEE8A00E01778 /* FryftEatsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		57CD45712BDEEE8A00E01778 /* FryftEatsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57CD45822BDEEE8A00E01778 /* Build configuration list for PBXNativeTarget "FryftEatsUITests" */;
+			buildPhases = (
+				57CD456E2BDEEE8A00E01778 /* Sources */,
+				57CD456F2BDEEE8A00E01778 /* Frameworks */,
+				57CD45702BDEEE8A00E01778 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				57CD45742BDEEE8A00E01778 /* PBXTargetDependency */,
+			);
+			name = FryftEatsUITests;
+			productName = FryftEatsUITests;
+			productReference = 57CD45722BDEEE8A00E01778 /* FryftEatsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		57CD45502BDEEE8600E01778 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					57CD45572BDEEE8600E01778 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					57CD45672BDEEE8A00E01778 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 57CD45572BDEEE8600E01778;
+					};
+					57CD45712BDEEE8A00E01778 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 57CD45572BDEEE8600E01778;
+					};
+				};
+			};
+			buildConfigurationList = 57CD45532BDEEE8600E01778 /* Build configuration list for PBXProject "FryftEats" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 57CD454F2BDEEE8600E01778;
+			productRefGroup = 57CD45592BDEEE8600E01778 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				57CD45572BDEEE8600E01778 /* FryftEats */,
+				57CD45672BDEEE8A00E01778 /* FryftEatsTests */,
+				57CD45712BDEEE8A00E01778 /* FryftEatsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		57CD45562BDEEE8600E01778 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57CD45632BDEEE8900E01778 /* Preview Assets.xcassets in Resources */,
+				57CD45602BDEEE8900E01778 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57CD45662BDEEE8A00E01778 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57CD45702BDEEE8A00E01778 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		57CD45542BDEEE8600E01778 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57CD455E2BDEEE8600E01778 /* ContentView.swift in Sources */,
+				57CD455C2BDEEE8600E01778 /* FryftEatsApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57CD45642BDEEE8A00E01778 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57CD456D2BDEEE8A00E01778 /* FryftEatsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57CD456E2BDEEE8A00E01778 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57CD45772BDEEE8A00E01778 /* FryftEatsUITests.swift in Sources */,
+				57CD45792BDEEE8A00E01778 /* FryftEatsUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		57CD456A2BDEEE8A00E01778 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 57CD45572BDEEE8600E01778 /* FryftEats */;
+			targetProxy = 57CD45692BDEEE8A00E01778 /* PBXContainerItemProxy */;
+		};
+		57CD45742BDEEE8A00E01778 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 57CD45572BDEEE8600E01778 /* FryftEats */;
+			targetProxy = 57CD45732BDEEE8A00E01778 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		57CD457A2BDEEE8A00E01778 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		57CD457B2BDEEE8A00E01778 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		57CD457D2BDEEE8A00E01778 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FryftEats/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = usc.edu.FryftEats;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		57CD457E2BDEEE8A00E01778 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FryftEats/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = usc.edu.FryftEats;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		57CD45802BDEEE8A00E01778 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = usc.edu.FryftEatsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FryftEats.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FryftEats";
+			};
+			name = Debug;
+		};
+		57CD45812BDEEE8A00E01778 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = usc.edu.FryftEatsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FryftEats.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FryftEats";
+			};
+			name = Release;
+		};
+		57CD45832BDEEE8A00E01778 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = usc.edu.FryftEatsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FryftEats;
+			};
+			name = Debug;
+		};
+		57CD45842BDEEE8A00E01778 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = usc.edu.FryftEatsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FryftEats;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		57CD45532BDEEE8600E01778 /* Build configuration list for PBXProject "FryftEats" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57CD457A2BDEEE8A00E01778 /* Debug */,
+				57CD457B2BDEEE8A00E01778 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		57CD457C2BDEEE8A00E01778 /* Build configuration list for PBXNativeTarget "FryftEats" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57CD457D2BDEEE8A00E01778 /* Debug */,
+				57CD457E2BDEEE8A00E01778 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		57CD457F2BDEEE8A00E01778 /* Build configuration list for PBXNativeTarget "FryftEatsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57CD45802BDEEE8A00E01778 /* Debug */,
+				57CD45812BDEEE8A00E01778 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		57CD45822BDEEE8A00E01778 /* Build configuration list for PBXNativeTarget "FryftEatsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57CD45832BDEEE8A00E01778 /* Debug */,
+				57CD45842BDEEE8A00E01778 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 57CD45502BDEEE8600E01778 /* Project object */;
+}
