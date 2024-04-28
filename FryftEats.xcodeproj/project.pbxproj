@@ -19,6 +19,12 @@
 		57CD458D2BDEF3C400E01778 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD458C2BDEF3C400E01778 /* Restaurant.swift */; };
 		57CD45912BDEF3DB00E01778 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD45902BDEF3DB00E01778 /* Comment.swift */; };
 		57CD45932BDEF3E800E01778 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD45922BDEF3E800E01778 /* Report.swift */; };
+		57CD45982BDEFEC300E01778 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD45972BDEFEC300E01778 /* SessionManager.swift */; };
+		57CD459A2BDEFEE200E01778 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD45992BDEFEE200E01778 /* LoginViewModel.swift */; };
+		57CD459E2BDEFF3C00E01778 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD459D2BDEFF3C00E01778 /* Login.swift */; };
+		57CD45A12BDF093900E01778 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD45A02BDF093800E01778 /* DateExtensions.swift */; };
+		57CD45A32BDF0BEB00E01778 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD45A22BDF0BEB00E01778 /* SignUpViewModel.swift */; };
+		57CD45A52BDF0BF900E01778 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD45A42BDF0BF900E01778 /* SignUp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +60,12 @@
 		57CD458C2BDEF3C400E01778 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		57CD45902BDEF3DB00E01778 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		57CD45922BDEF3E800E01778 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		57CD45972BDEFEC300E01778 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		57CD45992BDEFEE200E01778 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		57CD459D2BDEFF3C00E01778 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		57CD45A02BDF093800E01778 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		57CD45A22BDF0BEB00E01778 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		57CD45A42BDF0BF900E01778 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +116,8 @@
 		57CD455A2BDEEE8600E01778 /* FryftEats */ = {
 			isa = PBXGroup;
 			children = (
+				57CD459F2BDF092B00E01778 /* Util */,
+				57CD45962BDEFEB400E01778 /* Services */,
 				57CD45872BDEF07D00E01778 /* ViewModel */,
 				57CD45862BDEF07600E01778 /* View */,
 				57CD45852BDEF07000E01778 /* Model */,
@@ -155,6 +169,8 @@
 			children = (
 				57CD455D2BDEEE8600E01778 /* ContentView.swift */,
 				57CD45882BDEF1F400E01778 /* Home.swift */,
+				57CD459D2BDEFF3C00E01778 /* Login.swift */,
+				57CD45A42BDF0BF900E01778 /* SignUp.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -162,8 +178,26 @@
 		57CD45872BDEF07D00E01778 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				57CD45992BDEFEE200E01778 /* LoginViewModel.swift */,
+				57CD45A22BDF0BEB00E01778 /* SignUpViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		57CD45962BDEFEB400E01778 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				57CD45972BDEFEC300E01778 /* SessionManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		57CD459F2BDF092B00E01778 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				57CD45A02BDF093800E01778 /* DateExtensions.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,12 +331,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				57CD458D2BDEF3C400E01778 /* Restaurant.swift in Sources */,
+				57CD45A32BDF0BEB00E01778 /* SignUpViewModel.swift in Sources */,
 				57CD458B2BDEF30B00E01778 /* User.swift in Sources */,
+				57CD45982BDEFEC300E01778 /* SessionManager.swift in Sources */,
 				57CD455E2BDEEE8600E01778 /* ContentView.swift in Sources */,
+				57CD45A12BDF093900E01778 /* DateExtensions.swift in Sources */,
+				57CD45A52BDF0BF900E01778 /* SignUp.swift in Sources */,
 				57CD45932BDEF3E800E01778 /* Report.swift in Sources */,
 				57CD45912BDEF3DB00E01778 /* Comment.swift in Sources */,
 				57CD45892BDEF1F400E01778 /* Home.swift in Sources */,
 				57CD455C2BDEEE8600E01778 /* FryftEatsApp.swift in Sources */,
+				57CD459E2BDEFF3C00E01778 /* Login.swift in Sources */,
+				57CD459A2BDEFEE200E01778 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
