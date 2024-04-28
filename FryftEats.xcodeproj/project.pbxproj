@@ -14,6 +14,11 @@
 		57CD456D2BDEEE8A00E01778 /* FryftEatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD456C2BDEEE8A00E01778 /* FryftEatsTests.swift */; };
 		57CD45772BDEEE8A00E01778 /* FryftEatsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD45762BDEEE8A00E01778 /* FryftEatsUITests.swift */; };
 		57CD45792BDEEE8A00E01778 /* FryftEatsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD45782BDEEE8A00E01778 /* FryftEatsUITestsLaunchTests.swift */; };
+		57CD45892BDEF1F400E01778 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD45882BDEF1F400E01778 /* Home.swift */; };
+		57CD458B2BDEF30B00E01778 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD458A2BDEF30B00E01778 /* User.swift */; };
+		57CD458D2BDEF3C400E01778 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD458C2BDEF3C400E01778 /* Restaurant.swift */; };
+		57CD45912BDEF3DB00E01778 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD45902BDEF3DB00E01778 /* Comment.swift */; };
+		57CD45932BDEF3E800E01778 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD45922BDEF3E800E01778 /* Report.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,11 @@
 		57CD45722BDEEE8A00E01778 /* FryftEatsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FryftEatsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57CD45762BDEEE8A00E01778 /* FryftEatsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FryftEatsUITests.swift; sourceTree = "<group>"; };
 		57CD45782BDEEE8A00E01778 /* FryftEatsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FryftEatsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		57CD45882BDEF1F400E01778 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		57CD458A2BDEF30B00E01778 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		57CD458C2BDEF3C400E01778 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		57CD45902BDEF3DB00E01778 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		57CD45922BDEF3E800E01778 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +104,10 @@
 		57CD455A2BDEEE8600E01778 /* FryftEats */ = {
 			isa = PBXGroup;
 			children = (
+				57CD45872BDEF07D00E01778 /* ViewModel */,
+				57CD45862BDEF07600E01778 /* View */,
+				57CD45852BDEF07000E01778 /* Model */,
 				57CD455B2BDEEE8600E01778 /* FryftEatsApp.swift */,
-				57CD455D2BDEEE8600E01778 /* ContentView.swift */,
 				57CD455F2BDEEE8900E01778 /* Assets.xcassets */,
 				57CD45612BDEEE8900E01778 /* Preview Content */,
 			);
@@ -125,6 +137,33 @@
 				57CD45782BDEEE8A00E01778 /* FryftEatsUITestsLaunchTests.swift */,
 			);
 			path = FryftEatsUITests;
+			sourceTree = "<group>";
+		};
+		57CD45852BDEF07000E01778 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				57CD458A2BDEF30B00E01778 /* User.swift */,
+				57CD458C2BDEF3C400E01778 /* Restaurant.swift */,
+				57CD45902BDEF3DB00E01778 /* Comment.swift */,
+				57CD45922BDEF3E800E01778 /* Report.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		57CD45862BDEF07600E01778 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				57CD455D2BDEEE8600E01778 /* ContentView.swift */,
+				57CD45882BDEF1F400E01778 /* Home.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		57CD45872BDEF07D00E01778 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +296,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57CD458D2BDEF3C400E01778 /* Restaurant.swift in Sources */,
+				57CD458B2BDEF30B00E01778 /* User.swift in Sources */,
 				57CD455E2BDEEE8600E01778 /* ContentView.swift in Sources */,
+				57CD45932BDEF3E800E01778 /* Report.swift in Sources */,
+				57CD45912BDEF3DB00E01778 /* Comment.swift in Sources */,
+				57CD45892BDEF1F400E01778 /* Home.swift in Sources */,
 				57CD455C2BDEEE8600E01778 /* FryftEatsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
