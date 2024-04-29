@@ -12,16 +12,18 @@ struct RestaurantList: View {
     @ObservedObject var viewModel: RestaurantListViewModel
 
     var body: some View {
-        List(viewModel.restaurants, id: \.id) { restaurant in
-            RestaurantCard(viewModel: RestaurantViewModel(restaurant: restaurant, isFavoritesList: viewModel.isFavoritesList))
-                .listRowInsets(EdgeInsets())
+        ScrollView {
+            VStack {
+                ForEach(viewModel.restaurants, id: \.id) { restaurant in
+                    RestaurantCard(viewModel: RestaurantViewModel(restaurant: restaurant, isFavoritesList: viewModel.isFavoritesList, listViewModel: viewModel))
+                }
+            }
         }
-        .onAppear {
-            viewModel.loadRestaurants()
-        }
+        .padding([.horizontal])
+        .background(Color(hex: "#990000"))
     }
 }
 
 #Preview {
-    RestaurantList(viewModel: RestaurantListViewModel(restaurants: Restaurant.sampleRestaurants, isFavoritesList: false, isSearchList: true))
+    RestaurantList(viewModel: RestaurantListViewModel(restaurants: Restaurant.sampleRestaurants, isFavoritesList: false))
 }

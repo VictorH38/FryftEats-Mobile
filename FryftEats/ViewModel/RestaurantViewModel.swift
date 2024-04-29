@@ -13,9 +13,12 @@ class RestaurantViewModel: ObservableObject {
     @Published var isFavorite: Bool = false
     @Published var errorMessage: String?
     
-    init(restaurant: Restaurant, isFavoritesList: Bool) {
+    var restaurantListViewModel: RestaurantListViewModel?
+    
+    init(restaurant: Restaurant, isFavoritesList: Bool, listViewModel: RestaurantListViewModel?) {
         self.restaurant = restaurant
         self.isFavoritesList = isFavoritesList
+        self.restaurantListViewModel = listViewModel
         checkIfFavorite()
     }
     
@@ -29,6 +32,9 @@ class RestaurantViewModel: ObservableObject {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .flexibleISO8601
 
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, let response = response as? HTTPURLResponse, error == nil else {
@@ -41,7 +47,7 @@ class RestaurantViewModel: ObservableObject {
             if response.statusCode == 200 {
                 DispatchQueue.main.async {
                     do {
-                        _ = try JSONDecoder().decode(FavoriteResponse.self, from: data)
+                        let _ = try decoder.decode(FavoriteResponse.self, from: data)
                         self.isFavorite = true
                     } catch {
                         self.errorMessage = "Failed to decode response."
@@ -88,12 +94,13 @@ class RestaurantViewModel: ObservableObject {
                 return
             }
 
-            if response.statusCode == 201 || response.statusCode == 204 {
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                if response.statusCode == 200 || response.statusCode == 201 || response.statusCode == 204 {
                     self.isFavorite.toggle()
-                }
-            } else {
-                DispatchQueue.main.async {
+                    if !self.isFavorite && self.isFavoritesList {
+                        self.restaurantListViewModel?.removeRestaurant(byId: restaurantId)
+                    }
+                } else {
                     self.errorMessage = "Failed to toggle favorite: \(response.statusCode)"
                 }
             }

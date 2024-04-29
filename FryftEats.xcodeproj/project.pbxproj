@@ -18,6 +18,7 @@
 		579430342BE040840012DB89 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430332BE040840012DB89 /* Favorite.swift */; };
 		579430362BE0494C0012DB89 /* RestaurantListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430352BE0494C0012DB89 /* RestaurantListViewModel.swift */; };
 		579430382BE053380012DB89 /* StarRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430372BE053380012DB89 /* StarRating.swift */; };
+		5794303A2BE0570F0012DB89 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430392BE0570F0012DB89 /* FavoritesViewModel.swift */; };
 		57CD455C2BDEEE8600E01778 /* FryftEatsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD455B2BDEEE8600E01778 /* FryftEatsApp.swift */; };
 		57CD45602BDEEE8900E01778 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CD455F2BDEEE8900E01778 /* Assets.xcassets */; };
 		57CD45632BDEEE8900E01778 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CD45622BDEEE8900E01778 /* Preview Assets.xcassets */; };
@@ -65,6 +66,7 @@
 		579430332BE040840012DB89 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		579430352BE0494C0012DB89 /* RestaurantListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListViewModel.swift; sourceTree = "<group>"; };
 		579430372BE053380012DB89 /* StarRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRating.swift; sourceTree = "<group>"; };
+		579430392BE0570F0012DB89 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		57CD45582BDEEE8600E01778 /* FryftEats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FryftEats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57CD455B2BDEEE8600E01778 /* FryftEatsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FryftEatsApp.swift; sourceTree = "<group>"; };
 		57CD455F2BDEEE8900E01778 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				57CD45A22BDF0BEB00E01778 /* SignUpViewModel.swift */,
 				579430312BE010400012DB89 /* RestaurantViewModel.swift */,
 				579430352BE0494C0012DB89 /* RestaurantListViewModel.swift */,
+				579430392BE0570F0012DB89 /* FavoritesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				579430362BE0494C0012DB89 /* RestaurantListViewModel.swift in Sources */,
 				579430282BDF194F0012DB89 /* Favorites.swift in Sources */,
 				57CD459E2BDEFF3C00E01778 /* Login.swift in Sources */,
+				5794303A2BE0570F0012DB89 /* FavoritesViewModel.swift in Sources */,
 				57CD459A2BDEFEE200E01778 /* LoginViewModel.swift in Sources */,
 				5794302C2BDF1E620012DB89 /* ColorExtensions.swift in Sources */,
 			);

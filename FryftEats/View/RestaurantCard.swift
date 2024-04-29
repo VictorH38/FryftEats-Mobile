@@ -84,6 +84,7 @@ struct RestaurantCard: View {
             rating: 4.5,
             imageUrl: "https://example.com/image.jpg"
         ),
-        isFavoritesList: true
+        isFavoritesList: true,
+        listViewModel: nil
     ))
 }
