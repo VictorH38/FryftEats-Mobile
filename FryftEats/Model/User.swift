@@ -14,8 +14,8 @@ class User: Codable {
     var email: String
     var username: String
     var emailVerifiedAt: Date?
-    var createdAt: Date
-    var updatedAt: Date
+    var createdAt: Date?
+    var updatedAt: Date?
 
     var favorites: [Restaurant]?
     var comments: [Comment]?
@@ -35,7 +35,7 @@ class User: Codable {
         case reports
     }
 
-    init(id: Int? = nil, firstName: String, lastName: String, email: String, username: String, emailVerifiedAt: Date? = nil, createdAt: Date, updatedAt: Date, favorites: [Restaurant]? = nil, comments: [Comment]? = nil, reports: [Report]? = nil) {
+    init(id: Int? = nil, firstName: String, lastName: String, email: String, username: String, emailVerifiedAt: Date? = nil, createdAt: Date? = nil, updatedAt: Date? = nil, favorites: [Restaurant]? = nil, comments: [Comment]? = nil, reports: [Report]? = nil) {
         self.id = id
         self.firstName = firstName
         self.lastName = lastName

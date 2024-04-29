@@ -21,7 +21,7 @@ struct SignUp: View {
             
             if let errorMessage = viewModel.errorMessage {
                 Text(errorMessage)
-                    .foregroundColor(.red)
+                    .foregroundColor(.black)
             }
             
             TextField("First Name", text: $viewModel.firstName)
@@ -60,9 +60,12 @@ struct SignUp: View {
                 .foregroundColor(.black)
                 .cornerRadius(5)
             
-            Button("Sign Up", action: {
+            Button(action: {
                 viewModel.signUp()
-            })
+            }) {
+                Text("Sign Up")
+                    .frame(maxWidth: .infinity)
+            }
             .padding()
             .frame(maxWidth: .infinity)
             .background(Color.gray)

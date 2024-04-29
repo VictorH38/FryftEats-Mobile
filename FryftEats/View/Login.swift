@@ -20,10 +20,6 @@ struct Login: View {
                     .font(.largeTitle)
                     .foregroundColor(.white)
                 
-                if viewModel.isLoggedIn {
-                    Text("Logged in successfully!")
-                        .foregroundColor(.white)
-                }
                 if let errorMessage = viewModel.errorMessage {
                     Text(errorMessage)
                         .foregroundColor(.black)
@@ -41,9 +37,12 @@ struct Login: View {
                     .foregroundColor(.black)
                     .cornerRadius(5)
                 
-                Button("Login", action: {
+                Button(action: {
                     viewModel.login()
-                })
+                }) {
+                    Text("Login")
+                        .frame(maxWidth: .infinity)
+                }
                 .padding()
                 .frame(maxWidth: .infinity)
                 .background(Color.gray)
