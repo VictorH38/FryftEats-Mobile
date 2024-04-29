@@ -25,8 +25,7 @@ extension JSONDecoder.DateDecodingStrategy {
         if let date = DateFormatter.customISO8601.date(from: dateString) {
             return date
         } else {
-            throw DecodingError.dataCorruptedError(in: container,
-                                                   debugDescription: "Cannot decode date string \(dateString)")
+            throw DecodingError.dataCorruptedError(in: container, debugDescription: "Cannot decode date string \(dateString)")
         }
     }
 }
