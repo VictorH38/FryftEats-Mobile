@@ -17,44 +17,61 @@ struct RestaurantDetails: View {
                 Text(viewModel.restaurant.name)
                     .font(.largeTitle)
                     .fontWeight(.bold)
+                    .foregroundColor(.white)
                 
                 if let imageUrl = viewModel.restaurant.imageUrl, let url = URL(string: imageUrl) {
                     AsyncImage(url: url) { image in
                         image
                             .resizable()
-                            .aspectRatio(contentMode: .fill)
+                            .scaledToFill()
                     } placeholder: {
                         ProgressView()
                     }
-                    .frame(height: 300)
+                    .frame(maxWidth: .infinity, maxHeight: 300)
+                    .clipped()
                     .cornerRadius(12)
+                } else {
+                    Image("no-image")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(maxWidth: .infinity, minHeight: 100, maxHeight: 300)
+                        .clipped()
+                        .cornerRadius(8)
                 }
                 
                 Text(viewModel.restaurant.address)
-                    .font(.headline)
+                    .font(.subheadline)
+                    .foregroundColor(.white)
                 
                 if let phoneNumber = viewModel.restaurant.phoneNumber {
                     Text("Phone: \(phoneNumber)")
                         .font(.subheadline)
+                        .foregroundColor(.white)
                 }
                 
                 if let price = viewModel.restaurant.price {
                     Text("Price: \(price)")
                         .font(.subheadline)
+                        .foregroundColor(.white)
                 }
                 
                 if let rating = viewModel.restaurant.rating {
-                    Text("Rating: \(rating) / 5")
-                        .font(.subheadline)
+                    StarRating(rating: rating)
                 }
                 
                 if let url = viewModel.restaurant.url {
                     Link("More Info", destination: URL(string: url)!)
+                        .font(.subheadline)
                 }
             }
-            .padding()
         }
-        .navigationTitle("Details")
-        .navigationBarTitleDisplayMode(.inline)
+        .padding()
+        .background(Color(hex: "#990000"))
     }
+}
+
+#Preview {
+    RestaurantDetails(viewModel: RestaurantDetailsViewModel(
+        restaurant: Restaurant.sampleRestaurants[0]
+    ))
 }

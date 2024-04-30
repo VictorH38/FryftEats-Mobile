@@ -6,20 +6,32 @@
 //
 
 import Foundation
+import CoreLocation
 
-class SessionManager: ObservableObject {
+class SessionManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     static let shared = SessionManager()
+    
     @Published var token: String?
     @Published var isLoggedIn: Bool = false
     @Published var user: User?
-
-    private init() {}
-
+    @Published var currentLocation: CLLocation?
+    
+    private let locationManager = CLLocationManager()
+    private let defaults = UserDefaults.standard
+    
+    override init() {
+        super.init()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
     func login(token: String, user: User) {
         self.token = token
         self.user = user
         self.isLoggedIn = true
-        UserDefaults.standard.set(token, forKey: "authToken")
+        defaults.set(token, forKey: "authToken")
     }
     
     func signUp(token: String, user: User) {
@@ -30,10 +42,36 @@ class SessionManager: ObservableObject {
         self.token = nil
         self.user = nil
         self.isLoggedIn = false
-        UserDefaults.standard.removeObject(forKey: "authToken")
+        defaults.removeObject(forKey: "authToken")
     }
 
     func loadToken() -> String? {
-        return UserDefaults.standard.string(forKey: "authToken")
+        return defaults.string(forKey: "authToken")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            currentLocation = location
+            
+            defaults.set(location.coordinate.latitude, forKey: "userLatitude")
+            defaults.set(location.coordinate.longitude, forKey: "userLongitude")
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Failed to find user's location: \(error.localizedDescription)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .notDetermined:
+            manager.requestWhenInUseAuthorization()
+        case .authorizedWhenInUse, .authorizedAlways:
+            manager.startUpdatingLocation()
+        case .restricted, .denied:
+            print("Location access was restricted or denied.")
+        default:
+            break
+        }
     }
 }
