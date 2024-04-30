@@ -22,7 +22,7 @@ class SignUpViewModel: ObservableObject {
 
     func signUp() {
         guard password == confirmPassword else {
-            errorMessage = "Passwords do not match"
+            errorMessage = "Passwords do not match."
             return
         }
 
@@ -46,23 +46,30 @@ class SignUpViewModel: ObservableObject {
 
         URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { output in
-                guard let response = output.response as? HTTPURLResponse, response.statusCode == 200 else {
+                guard let response = output.response as? HTTPURLResponse else {
                     throw URLError(.badServerResponse)
                 }
-                return output.data
+                if response.statusCode == 200 {
+                    return output.data
+                } else {
+                    let errorResponse = try JSONDecoder().decode(ErrorResponse.self, from: output.data)
+                    throw NSError(domain: "", code: response.statusCode, userInfo: [NSLocalizedDescriptionKey: errorResponse.message])
+                }
             }
             .decode(type: SignUpResponse.self, decoder: decoder)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
-                switch completion {
-                case .finished:
-                    break
-                case .failure(let error):
-                    self.errorMessage = error.localizedDescription
+                if case let .failure(error) = completion {
+                    DispatchQueue.main.async {
+                        self.errorMessage = error.localizedDescription
+                    }
                 }
             }, receiveValue: { response in
                 SessionManager.shared.signUp(token: response.token, user: response.user)
-                self.isSignUpComplete = true
+                DispatchQueue.main.async {
+                    self.isSignUpComplete = true
+                    self.errorMessage = nil
+                }
             })
             .store(in: &cancellables)
     }

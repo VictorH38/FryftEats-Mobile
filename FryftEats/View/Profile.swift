@@ -40,7 +40,7 @@ struct Profile: View {
                     .frame(maxWidth: .infinity)
                     .background(Color.gray)
                     .foregroundColor(.white)
-                    .cornerRadius(5)
+                    .cornerRadius(10)
                 }
                 .padding()
             } else {

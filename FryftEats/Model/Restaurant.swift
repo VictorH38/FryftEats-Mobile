@@ -19,7 +19,9 @@ class Restaurant: Codable {
     var imageUrl: String?
     var latitude: Double?
     var longitude: Double?
-
+    var createdAt: Date?
+    var updatedAt: Date?
+    
     var favorites: [User]?
     var comments: [Comment]?
     var reports: [Report]?
@@ -36,12 +38,14 @@ class Restaurant: Codable {
         case imageUrl = "image_url"
         case latitude
         case longitude
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
         case favorites
         case comments
         case reports
     }
-
-    init(id: Int? = nil, name: String, address: String, phoneNumber: String? = nil, cuisine: String? = nil, rating: Double? = nil, price: String? = nil, url: String? = nil, imageUrl: String? = nil, latitude: Double? = nil, longitude: Double? = nil, favorites: [User]? = nil, comments: [Comment]? = nil, reports: [Report]? = nil) {
+    
+    init(id: Int? = nil, name: String, address: String, phoneNumber: String? = nil, cuisine: String? = nil, rating: Double? = nil, price: String? = nil, url: String? = nil, imageUrl: String? = nil, latitude: Double? = nil, longitude: Double? = nil, createdAt: Date? = nil, updatedAt: Date? = nil, favorites: [User]? = nil, comments: [Comment]? = nil, reports: [Report]? = nil) {
         self.id = id
         self.name = name
         self.address = address
@@ -53,9 +57,54 @@ class Restaurant: Codable {
         self.imageUrl = imageUrl
         self.latitude = latitude
         self.longitude = longitude
+        self.createdAt = createdAt
+        self.updatedAt = updatedAt
         self.favorites = favorites
         self.comments = comments
         self.reports = reports
+    }
+
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try? container.decode(Int.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+        address = try container.decode(String.self, forKey: .address)
+        phoneNumber = try? container.decode(String.self, forKey: .phoneNumber)
+        cuisine = try? container.decode(String.self, forKey: .cuisine)
+        rating = try? container.decode(Double.self, forKey: .rating)
+        price = try? container.decode(String.self, forKey: .price)
+        url = try? container.decode(String.self, forKey: .url)
+        imageUrl = try? container.decode(String.self, forKey: .imageUrl)
+        
+        if let latitudeString = try? container.decode(String.self, forKey: .latitude),
+           let latitudeDouble = Double(latitudeString) {
+            latitude = latitudeDouble
+        } else {
+            latitude = nil
+        }
+
+        if let longitudeString = try? container.decode(String.self, forKey: .longitude),
+           let longitudeDouble = Double(longitudeString) {
+            longitude = longitudeDouble
+        } else {
+            longitude = nil
+        }
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+        if let createdAtString = try? container.decode(String.self, forKey: .createdAt),
+           let date = dateFormatter.date(from: createdAtString) {
+            createdAt = date
+        } else {
+            createdAt = nil
+        }
+
+        if let updatedAtString = try? container.decode(String.self, forKey: .updatedAt),
+           let date = dateFormatter.date(from: updatedAtString) {
+            updatedAt = date
+        } else {
+            updatedAt = nil
+        }
     }
 }
 
