@@ -73,13 +73,14 @@ struct RestaurantDetails: View {
                         pickup: CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude),
                         destination: CLLocationCoordinate2D(latitude: restaurantLat, longitude: restaurantLong)
                     )
-                    .frame(width: 300, height: 50)
+                    .frame(width: .infinity, height: 55)
                     .cornerRadius(10)
                     .frame(maxWidth: .infinity)
-                    .padding(.horizontal)
                     .background(Color(hex: "#990000"))
                     .padding(.top, 10)
                 }
+                
+                ShareButton(restaurant: viewModel.restaurant)
             }
         }
         .padding()

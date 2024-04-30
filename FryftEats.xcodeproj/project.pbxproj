@@ -26,6 +26,7 @@
 		579430422BE0895A0012DB89 /* RestaurantDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430412BE0895A0012DB89 /* RestaurantDetails.swift */; };
 		579430452BE0B3C50012DB89 /* LyftRideButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430442BE0B3C50012DB89 /* LyftRideButton.swift */; };
 		57BAD2BF2BE171AA00D9FE69 /* LyftService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAD2BE2BE171AA00D9FE69 /* LyftService.swift */; };
+		57BAD2C12BE17EA300D9FE69 /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAD2C02BE17EA300D9FE69 /* ShareButton.swift */; };
 		57CD455C2BDEEE8600E01778 /* FryftEatsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD455B2BDEEE8600E01778 /* FryftEatsApp.swift */; };
 		57CD45602BDEEE8900E01778 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CD455F2BDEEE8900E01778 /* Assets.xcassets */; };
 		57CD45632BDEEE8900E01778 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CD45622BDEEE8900E01778 /* Preview Assets.xcassets */; };
@@ -88,6 +89,7 @@
 		579430432BE09D4D0012DB89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		579430442BE0B3C50012DB89 /* LyftRideButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyftRideButton.swift; sourceTree = "<group>"; };
 		57BAD2BE2BE171AA00D9FE69 /* LyftService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyftService.swift; sourceTree = "<group>"; };
+		57BAD2C02BE17EA300D9FE69 /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
 		57CD45582BDEEE8600E01778 /* FryftEats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FryftEats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57CD455B2BDEEE8600E01778 /* FryftEatsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FryftEatsApp.swift; sourceTree = "<group>"; };
 		57CD455F2BDEEE8900E01778 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				579430372BE053380012DB89 /* StarRating.swift */,
 				579430412BE0895A0012DB89 /* RestaurantDetails.swift */,
 				579430442BE0B3C50012DB89 /* LyftRideButton.swift */,
+				57BAD2C02BE17EA300D9FE69 /* ShareButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				579430342BE040840012DB89 /* Favorite.swift in Sources */,
 				57CD45A12BDF093900E01778 /* DateExtensions.swift in Sources */,
 				579430302BE00F750012DB89 /* RestaurantList.swift in Sources */,
+				57BAD2C12BE17EA300D9FE69 /* ShareButton.swift in Sources */,
 				579430402BE089420012DB89 /* RestaurantDetailsViewModel.swift in Sources */,
 				57BAD2BF2BE171AA00D9FE69 /* LyftService.swift in Sources */,
 				579430382BE053380012DB89 /* StarRating.swift in Sources */,
