@@ -10,6 +10,7 @@ import SwiftUI
 
 struct RestaurantCard: View {
     @ObservedObject var viewModel: RestaurantViewModel
+    @ObservedObject var sessionManager = SessionManager.shared
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -19,31 +20,38 @@ struct RestaurantCard: View {
                     .padding([.top, .leading])
 
                 Spacer()
-
-                Button(action: {
-                    viewModel.toggleFavorite()
-                }) {
-                    Image(systemName: viewModel.isFavorite ? "heart.fill" : "heart")
-                        .imageScale(.large)
-                        .font(.system(size: 20))
-                        .foregroundColor(viewModel.isFavorite ? .red : .gray)
+                
+                if sessionManager.isLoggedIn {
+                    Button(action: {
+                        viewModel.toggleFavorite()
+                    }) {
+                        Image(systemName: viewModel.isFavorite ? "heart.fill" : "heart")
+                            .imageScale(.large)
+                            .font(.system(size: 20))
+                            .foregroundColor(viewModel.isFavorite ? .red : .gray)
+                    }
+                    .padding([.top, .trailing])
                 }
-                .padding([.top, .trailing])
             }
 
             HStack(spacing: 16) {
                 if let imageUrl = viewModel.restaurant.imageUrl, let url = URL(string: imageUrl) {
                     AsyncImage(url: url) { image in
-                        image.resizable()
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
                     } placeholder: {
                         Color.gray
                     }
                     .frame(width: 100, height: 100)
+                    .clipped()
                     .cornerRadius(8)
                 } else {
                     Image("no-image")
                         .resizable()
+                        .aspectRatio(contentMode: .fill)
                         .frame(width: 100, height: 100)
+                        .clipped()
                         .cornerRadius(8)
                 }
 
@@ -76,14 +84,7 @@ struct RestaurantCard: View {
 
 #Preview {
     RestaurantCard(viewModel: RestaurantViewModel(
-        restaurant: Restaurant(
-            id: 1,
-            name: "Example Restaurant",
-            address: "123 Main St",
-            phoneNumber: "123-456-7890",
-            rating: 4.5,
-            imageUrl: "https://example.com/image.jpg"
-        ),
+        restaurant: Restaurant.sampleRestaurants[0],
         isFavoritesList: true,
         listViewModel: nil
     ))

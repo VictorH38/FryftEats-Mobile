@@ -77,12 +77,9 @@ class RestaurantViewModel: ObservableObject {
         request.httpMethod = isFavorite ? "DELETE" : "POST"
         request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         
-        if isFavorite {
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        }
-
         if !isFavorite {
-            let body = ["restaurant_id": restaurantId]
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            let body = ["restaurant_id": self.restaurant.id]
             request.httpBody = try? JSONEncoder().encode(body)
         }
 

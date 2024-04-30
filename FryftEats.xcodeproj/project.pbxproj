@@ -19,6 +19,10 @@
 		579430362BE0494C0012DB89 /* RestaurantListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430352BE0494C0012DB89 /* RestaurantListViewModel.swift */; };
 		579430382BE053380012DB89 /* StarRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430372BE053380012DB89 /* StarRating.swift */; };
 		5794303A2BE0570F0012DB89 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430392BE0570F0012DB89 /* FavoritesViewModel.swift */; };
+		5794303C2BE06BCD0012DB89 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5794303B2BE06BCD0012DB89 /* SearchViewModel.swift */; };
+		5794303E2BE06C050012DB89 /* YelpBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5794303D2BE06C050012DB89 /* YelpBusiness.swift */; };
+		579430402BE089420012DB89 /* RestaurantDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5794303F2BE089420012DB89 /* RestaurantDetailsViewModel.swift */; };
+		579430422BE0895A0012DB89 /* RestaurantDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430412BE0895A0012DB89 /* RestaurantDetails.swift */; };
 		57CD455C2BDEEE8600E01778 /* FryftEatsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD455B2BDEEE8600E01778 /* FryftEatsApp.swift */; };
 		57CD45602BDEEE8900E01778 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CD455F2BDEEE8900E01778 /* Assets.xcassets */; };
 		57CD45632BDEEE8900E01778 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CD45622BDEEE8900E01778 /* Preview Assets.xcassets */; };
@@ -67,6 +71,10 @@
 		579430352BE0494C0012DB89 /* RestaurantListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListViewModel.swift; sourceTree = "<group>"; };
 		579430372BE053380012DB89 /* StarRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRating.swift; sourceTree = "<group>"; };
 		579430392BE0570F0012DB89 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		5794303B2BE06BCD0012DB89 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		5794303D2BE06C050012DB89 /* YelpBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpBusiness.swift; sourceTree = "<group>"; };
+		5794303F2BE089420012DB89 /* RestaurantDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsViewModel.swift; sourceTree = "<group>"; };
+		579430412BE0895A0012DB89 /* RestaurantDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetails.swift; sourceTree = "<group>"; };
 		57CD45582BDEEE8600E01778 /* FryftEats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FryftEats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57CD455B2BDEEE8600E01778 /* FryftEatsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FryftEatsApp.swift; sourceTree = "<group>"; };
 		57CD455F2BDEEE8900E01778 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -181,6 +189,7 @@
 				57CD45902BDEF3DB00E01778 /* Comment.swift */,
 				57CD45922BDEF3E800E01778 /* Report.swift */,
 				579430332BE040840012DB89 /* Favorite.swift */,
+				5794303D2BE06C050012DB89 /* YelpBusiness.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -197,6 +206,7 @@
 				5794302D2BE00F6A0012DB89 /* RestaurantCard.swift */,
 				5794302F2BE00F750012DB89 /* RestaurantList.swift */,
 				579430372BE053380012DB89 /* StarRating.swift */,
+				579430412BE0895A0012DB89 /* RestaurantDetails.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -209,6 +219,8 @@
 				579430312BE010400012DB89 /* RestaurantViewModel.swift */,
 				579430352BE0494C0012DB89 /* RestaurantListViewModel.swift */,
 				579430392BE0570F0012DB89 /* FavoritesViewModel.swift */,
+				5794303B2BE06BCD0012DB89 /* SearchViewModel.swift */,
+				5794303F2BE089420012DB89 /* RestaurantDetailsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -365,19 +377,23 @@
 				57CD45A32BDF0BEB00E01778 /* SignUpViewModel.swift in Sources */,
 				57CD458B2BDEF30B00E01778 /* User.swift in Sources */,
 				57CD45982BDEFEC300E01778 /* SessionManager.swift in Sources */,
+				579430422BE0895A0012DB89 /* RestaurantDetails.swift in Sources */,
 				579430342BE040840012DB89 /* Favorite.swift in Sources */,
 				57CD45A12BDF093900E01778 /* DateExtensions.swift in Sources */,
 				579430302BE00F750012DB89 /* RestaurantList.swift in Sources */,
+				579430402BE089420012DB89 /* RestaurantDetailsViewModel.swift in Sources */,
 				579430382BE053380012DB89 /* StarRating.swift in Sources */,
 				57CD45A52BDF0BF900E01778 /* SignUp.swift in Sources */,
 				57CD45932BDEF3E800E01778 /* Report.swift in Sources */,
 				5794302E2BE00F6A0012DB89 /* RestaurantCard.swift in Sources */,
+				5794303E2BE06C050012DB89 /* YelpBusiness.swift in Sources */,
 				57CD45912BDEF3DB00E01778 /* Comment.swift in Sources */,
 				57CD455C2BDEEE8600E01778 /* FryftEatsApp.swift in Sources */,
 				579430322BE010400012DB89 /* RestaurantViewModel.swift in Sources */,
 				579430242BDF18E30012DB89 /* MainTabView.swift in Sources */,
 				579430262BDF19470012DB89 /* Search.swift in Sources */,
 				579430362BE0494C0012DB89 /* RestaurantListViewModel.swift in Sources */,
+				5794303C2BE06BCD0012DB89 /* SearchViewModel.swift in Sources */,
 				579430282BDF194F0012DB89 /* Favorites.swift in Sources */,
 				57CD459E2BDEFF3C00E01778 /* Login.swift in Sources */,
 				5794303A2BE0570F0012DB89 /* FavoritesViewModel.swift in Sources */,
