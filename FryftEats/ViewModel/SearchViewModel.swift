@@ -86,7 +86,9 @@ class SearchViewModel: ObservableObject {
             rating: business.rating,
             price: business.price,
             url: business.url,
-            imageUrl: business.imageUrl
+            imageUrl: business.imageUrl,
+            latitude: business.coordinates.latitude,
+            longitude: business.coordinates.longitude
         )
         
         guard let url = URL(string: "https://fryfteats.com/api/restaurants") else { return }

@@ -17,7 +17,9 @@ class Restaurant: Codable {
     var price: String?
     var url: String?
     var imageUrl: String?
-    
+    var latitude: Double?
+    var longitude: Double?
+
     var favorites: [User]?
     var comments: [Comment]?
     var reports: [Report]?
@@ -32,12 +34,14 @@ class Restaurant: Codable {
         case price
         case url
         case imageUrl = "image_url"
+        case latitude
+        case longitude
         case favorites
         case comments
         case reports
     }
 
-    init(id: Int? = nil, name: String, address: String, phoneNumber: String? = nil, cuisine: String? = nil, rating: Double? = nil, price: String? = nil, url: String? = nil, imageUrl: String? = nil, favorites: [User]? = nil, comments: [Comment]? = nil, reports: [Report]? = nil) {
+    init(id: Int? = nil, name: String, address: String, phoneNumber: String? = nil, cuisine: String? = nil, rating: Double? = nil, price: String? = nil, url: String? = nil, imageUrl: String? = nil, latitude: Double? = nil, longitude: Double? = nil, favorites: [User]? = nil, comments: [Comment]? = nil, reports: [Report]? = nil) {
         self.id = id
         self.name = name
         self.address = address
@@ -47,6 +51,8 @@ class Restaurant: Codable {
         self.price = price
         self.url = url
         self.imageUrl = imageUrl
+        self.latitude = latitude
+        self.longitude = longitude
         self.favorites = favorites
         self.comments = comments
         self.reports = reports
@@ -65,7 +71,9 @@ extension Restaurant {
                 rating: 4.5,
                 price: "$$",
                 url: "https://www.yelp.com/biz/pot-of-cha-los-angeles?adjust_creative=HcTws1zsDWAeEmQWEvZw5g&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=HcTws1zsDWAeEmQWEvZw5g",
-                imageUrl: "https://s3-media2.fl.yelpcdn.com/bphoto/N6xoZa0EuKBX2WIV22FeNQ/o.jpg"
+                imageUrl: "https://s3-media2.fl.yelpcdn.com/bphoto/N6xoZa0EuKBX2WIV22FeNQ/o.jpg",
+                latitude: 34.0224,
+                longitude: -118.2851
             ),
             Restaurant(
                 id: 2,
@@ -76,7 +84,9 @@ extension Restaurant {
                 rating: 4.0,
                 price: "$",
                 url: "https://www.yelp.com/biz/the-coffee-bean-los-angeles-2?adjust_creative=HcTws1zsDWAeEmQWEvZw5g&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=HcTws1zsDWAeEmQWEvZw5g",
-                imageUrl: "https://s3-media1.fl.yelpcdn.com/bphoto/Co4lCmZGR4Np0PTibwb5ig/o.jpg"
+                imageUrl: "https://s3-media1.fl.yelpcdn.com/bphoto/Co4lCmZGR4Np0PTibwb5ig/o.jpg",
+                latitude: 34.0284,
+                longitude: -118.2871
             )
         ]
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47962AAC2E0815078255DA0B /* Pods_FryftEats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34674ADB67F495EC8A4A1A43 /* Pods_FryftEats.framework */; };
 		579430242BDF18E30012DB89 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430232BDF18E30012DB89 /* MainTabView.swift */; };
 		579430262BDF19470012DB89 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430252BDF19470012DB89 /* Search.swift */; };
 		579430282BDF194F0012DB89 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430272BDF194F0012DB89 /* Favorites.swift */; };
@@ -23,6 +24,8 @@
 		5794303E2BE06C050012DB89 /* YelpBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5794303D2BE06C050012DB89 /* YelpBusiness.swift */; };
 		579430402BE089420012DB89 /* RestaurantDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5794303F2BE089420012DB89 /* RestaurantDetailsViewModel.swift */; };
 		579430422BE0895A0012DB89 /* RestaurantDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430412BE0895A0012DB89 /* RestaurantDetails.swift */; };
+		579430452BE0B3C50012DB89 /* LyftRideButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430442BE0B3C50012DB89 /* LyftRideButton.swift */; };
+		57BAD2BF2BE171AA00D9FE69 /* LyftService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAD2BE2BE171AA00D9FE69 /* LyftService.swift */; };
 		57CD455C2BDEEE8600E01778 /* FryftEatsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD455B2BDEEE8600E01778 /* FryftEatsApp.swift */; };
 		57CD45602BDEEE8900E01778 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CD455F2BDEEE8900E01778 /* Assets.xcassets */; };
 		57CD45632BDEEE8900E01778 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CD45622BDEEE8900E01778 /* Preview Assets.xcassets */; };
@@ -39,6 +42,8 @@
 		57CD45A12BDF093900E01778 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD45A02BDF093800E01778 /* DateExtensions.swift */; };
 		57CD45A32BDF0BEB00E01778 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD45A22BDF0BEB00E01778 /* SignUpViewModel.swift */; };
 		57CD45A52BDF0BF900E01778 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD45A42BDF0BF900E01778 /* SignUp.swift */; };
+		75F8558B2A4C18ACAEF6D65B /* Pods_FryftEats_FryftEatsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD302041FAD63D4CEC6EC36E /* Pods_FryftEats_FryftEatsUITests.framework */; };
+		8C96D934DE036AECA1148441 /* Pods_FryftEatsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040C726350B25C5ECB131454 /* Pods_FryftEatsTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +64,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		040C726350B25C5ECB131454 /* Pods_FryftEatsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FryftEatsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34674ADB67F495EC8A4A1A43 /* Pods_FryftEats.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FryftEats.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3595818B08E5BE754D3E1449 /* Pods-FryftEats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FryftEats.debug.xcconfig"; path = "Target Support Files/Pods-FryftEats/Pods-FryftEats.debug.xcconfig"; sourceTree = "<group>"; };
+		3E7B35B737BA249E67BA7926 /* Pods-FryftEatsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FryftEatsTests.release.xcconfig"; path = "Target Support Files/Pods-FryftEatsTests/Pods-FryftEatsTests.release.xcconfig"; sourceTree = "<group>"; };
+		44373AAD5DCD8A87CF66D594 /* Pods-FryftEats-FryftEatsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FryftEats-FryftEatsUITests.release.xcconfig"; path = "Target Support Files/Pods-FryftEats-FryftEatsUITests/Pods-FryftEats-FryftEatsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		579430232BDF18E30012DB89 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		579430252BDF19470012DB89 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		579430272BDF194F0012DB89 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
@@ -76,6 +86,8 @@
 		5794303F2BE089420012DB89 /* RestaurantDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsViewModel.swift; sourceTree = "<group>"; };
 		579430412BE0895A0012DB89 /* RestaurantDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetails.swift; sourceTree = "<group>"; };
 		579430432BE09D4D0012DB89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		579430442BE0B3C50012DB89 /* LyftRideButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyftRideButton.swift; sourceTree = "<group>"; };
+		57BAD2BE2BE171AA00D9FE69 /* LyftService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyftService.swift; sourceTree = "<group>"; };
 		57CD45582BDEEE8600E01778 /* FryftEats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FryftEats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57CD455B2BDEEE8600E01778 /* FryftEatsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FryftEatsApp.swift; sourceTree = "<group>"; };
 		57CD455F2BDEEE8900E01778 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,6 +107,10 @@
 		57CD45A02BDF093800E01778 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		57CD45A22BDF0BEB00E01778 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		57CD45A42BDF0BF900E01778 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		B53D681F246F8A1BA7E11E70 /* Pods-FryftEats.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FryftEats.release.xcconfig"; path = "Target Support Files/Pods-FryftEats/Pods-FryftEats.release.xcconfig"; sourceTree = "<group>"; };
+		BF2D9DEBF3843D2EE26F5773 /* Pods-FryftEatsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FryftEatsTests.debug.xcconfig"; path = "Target Support Files/Pods-FryftEatsTests/Pods-FryftEatsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D81C0F4DE18F1DC8AC5987DA /* Pods-FryftEats-FryftEatsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FryftEats-FryftEatsUITests.debug.xcconfig"; path = "Target Support Files/Pods-FryftEats-FryftEatsUITests/Pods-FryftEats-FryftEatsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DD302041FAD63D4CEC6EC36E /* Pods_FryftEats_FryftEatsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FryftEats_FryftEatsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47962AAC2E0815078255DA0B /* Pods_FryftEats.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C96D934DE036AECA1148441 /* Pods_FryftEatsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75F8558B2A4C18ACAEF6D65B /* Pods_FryftEats_FryftEatsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +148,8 @@
 				57CD456B2BDEEE8A00E01778 /* FryftEatsTests */,
 				57CD45752BDEEE8A00E01778 /* FryftEatsUITests */,
 				57CD45592BDEEE8600E01778 /* Products */,
+				61B83F2F45CBFD4CF8088C9A /* Pods */,
+				F990C05F7D3F045DF24318F3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -209,6 +230,7 @@
 				5794302F2BE00F750012DB89 /* RestaurantList.swift */,
 				579430372BE053380012DB89 /* StarRating.swift */,
 				579430412BE0895A0012DB89 /* RestaurantDetails.swift */,
+				579430442BE0B3C50012DB89 /* LyftRideButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -231,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				57CD45972BDEFEC300E01778 /* SessionManager.swift */,
+				57BAD2BE2BE171AA00D9FE69 /* LyftService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -244,6 +267,29 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		61B83F2F45CBFD4CF8088C9A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3595818B08E5BE754D3E1449 /* Pods-FryftEats.debug.xcconfig */,
+				B53D681F246F8A1BA7E11E70 /* Pods-FryftEats.release.xcconfig */,
+				D81C0F4DE18F1DC8AC5987DA /* Pods-FryftEats-FryftEatsUITests.debug.xcconfig */,
+				44373AAD5DCD8A87CF66D594 /* Pods-FryftEats-FryftEatsUITests.release.xcconfig */,
+				BF2D9DEBF3843D2EE26F5773 /* Pods-FryftEatsTests.debug.xcconfig */,
+				3E7B35B737BA249E67BA7926 /* Pods-FryftEatsTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F990C05F7D3F045DF24318F3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34674ADB67F495EC8A4A1A43 /* Pods_FryftEats.framework */,
+				DD302041FAD63D4CEC6EC36E /* Pods_FryftEats_FryftEatsUITests.framework */,
+				040C726350B25C5ECB131454 /* Pods_FryftEatsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -251,9 +297,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57CD457C2BDEEE8A00E01778 /* Build configuration list for PBXNativeTarget "FryftEats" */;
 			buildPhases = (
+				13967AF332D0CA02949680BB /* [CP] Check Pods Manifest.lock */,
 				57CD45542BDEEE8600E01778 /* Sources */,
 				57CD45552BDEEE8600E01778 /* Frameworks */,
 				57CD45562BDEEE8600E01778 /* Resources */,
+				0143A3B5D8DCC8C805E5BBB7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -268,6 +316,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57CD457F2BDEEE8A00E01778 /* Build configuration list for PBXNativeTarget "FryftEatsTests" */;
 			buildPhases = (
+				792C80B3BCE879DF3B34BD68 /* [CP] Check Pods Manifest.lock */,
 				57CD45642BDEEE8A00E01778 /* Sources */,
 				57CD45652BDEEE8A00E01778 /* Frameworks */,
 				57CD45662BDEEE8A00E01778 /* Resources */,
@@ -286,9 +335,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 57CD45822BDEEE8A00E01778 /* Build configuration list for PBXNativeTarget "FryftEatsUITests" */;
 			buildPhases = (
+				84331057F87388B1274C5269 /* [CP] Check Pods Manifest.lock */,
 				57CD456E2BDEEE8A00E01778 /* Sources */,
 				57CD456F2BDEEE8A00E01778 /* Frameworks */,
 				57CD45702BDEEE8A00E01778 /* Resources */,
+				D72AF1C370532354EAB4681F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -369,6 +420,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0143A3B5D8DCC8C805E5BBB7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FryftEats/Pods-FryftEats-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FryftEats/Pods-FryftEats-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FryftEats/Pods-FryftEats-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		13967AF332D0CA02949680BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FryftEats-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		792C80B3BCE879DF3B34BD68 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FryftEatsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84331057F87388B1274C5269 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FryftEats-FryftEatsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D72AF1C370532354EAB4681F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FryftEats-FryftEatsUITests/Pods-FryftEats-FryftEatsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FryftEats-FryftEatsUITests/Pods-FryftEats-FryftEatsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FryftEats-FryftEatsUITests/Pods-FryftEats-FryftEatsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		57CD45542BDEEE8600E01778 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -384,6 +538,7 @@
 				57CD45A12BDF093900E01778 /* DateExtensions.swift in Sources */,
 				579430302BE00F750012DB89 /* RestaurantList.swift in Sources */,
 				579430402BE089420012DB89 /* RestaurantDetailsViewModel.swift in Sources */,
+				57BAD2BF2BE171AA00D9FE69 /* LyftService.swift in Sources */,
 				579430382BE053380012DB89 /* StarRating.swift in Sources */,
 				57CD45A52BDF0BF900E01778 /* SignUp.swift in Sources */,
 				57CD45932BDEF3E800E01778 /* Report.swift in Sources */,
@@ -396,6 +551,7 @@
 				579430262BDF19470012DB89 /* Search.swift in Sources */,
 				579430362BE0494C0012DB89 /* RestaurantListViewModel.swift in Sources */,
 				5794303C2BE06BCD0012DB89 /* SearchViewModel.swift in Sources */,
+				579430452BE0B3C50012DB89 /* LyftRideButton.swift in Sources */,
 				579430282BDF194F0012DB89 /* Favorites.swift in Sources */,
 				57CD459E2BDEFF3C00E01778 /* Login.swift in Sources */,
 				5794303A2BE0570F0012DB89 /* FavoritesViewModel.swift in Sources */,
@@ -474,7 +630,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -537,7 +693,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -558,6 +714,7 @@
 		};
 		57CD457D2BDEEE8A00E01778 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3595818B08E5BE754D3E1449 /* Pods-FryftEats.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -574,6 +731,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -589,6 +747,7 @@
 		};
 		57CD457E2BDEEE8A00E01778 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B53D681F246F8A1BA7E11E70 /* Pods-FryftEats.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -605,6 +764,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -620,6 +780,7 @@
 		};
 		57CD45802BDEEE8A00E01778 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF2D9DEBF3843D2EE26F5773 /* Pods-FryftEatsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -639,6 +800,7 @@
 		};
 		57CD45812BDEEE8A00E01778 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E7B35B737BA249E67BA7926 /* Pods-FryftEatsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -658,6 +820,7 @@
 		};
 		57CD45832BDEEE8A00E01778 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D81C0F4DE18F1DC8AC5987DA /* Pods-FryftEats-FryftEatsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -675,6 +838,7 @@
 		};
 		57CD45842BDEEE8A00E01778 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44373AAD5DCD8A87CF66D594 /* Pods-FryftEats-FryftEatsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
