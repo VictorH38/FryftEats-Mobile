@@ -75,6 +75,7 @@
 		5794303D2BE06C050012DB89 /* YelpBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpBusiness.swift; sourceTree = "<group>"; };
 		5794303F2BE089420012DB89 /* RestaurantDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsViewModel.swift; sourceTree = "<group>"; };
 		579430412BE0895A0012DB89 /* RestaurantDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetails.swift; sourceTree = "<group>"; };
+		579430432BE09D4D0012DB89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		57CD45582BDEEE8600E01778 /* FryftEats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FryftEats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57CD455B2BDEEE8600E01778 /* FryftEatsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FryftEatsApp.swift; sourceTree = "<group>"; };
 		57CD455F2BDEEE8900E01778 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -144,6 +145,7 @@
 		57CD455A2BDEEE8600E01778 /* FryftEats */ = {
 			isa = PBXGroup;
 			children = (
+				579430432BE09D4D0012DB89 /* Info.plist */,
 				57CD459F2BDF092B00E01778 /* Util */,
 				57CD45962BDEFEB400E01778 /* Services */,
 				57CD45872BDEF07D00E01778 /* ViewModel */,
@@ -564,7 +566,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FryftEats/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FryftEats/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FryftEats;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to provide location-based services while using the app";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -593,7 +597,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FryftEats/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FryftEats/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FryftEats;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to provide location-based services while using the app";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

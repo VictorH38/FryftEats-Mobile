@@ -10,6 +10,7 @@ import SwiftUI
 
 struct RestaurantDetails: View {
     @ObservedObject var viewModel: RestaurantDetailsViewModel
+    @ObservedObject var sessionManager = SessionManager.shared
     
     var body: some View {
         ScrollView {
