@@ -42,7 +42,6 @@ class ReportViewModel: ObservableObject {
     
     // Fetches a list of restaurants from the server
     func fetchRestaurants() {
-        print("poop")
         isLoading = true
         let url = URL(string: "https://fryfteats.com/api/restaurants?sort=name&order=asc")!
         

@@ -8,24 +8,18 @@
 import Foundation
 import Combine
 import UIKit
+import SwiftUI
 
 class SignUpViewModel: ObservableObject {
-    @Published var firstName: String = ""
-    @Published var lastName: String = ""
-    @Published var email: String = ""
-    @Published var username: String = ""
-    @Published var password: String = ""
-    @Published var confirmPassword: String = ""
-    @Published var errorMessage: String?
     @Published var isSignUpComplete: Bool = false
 
     private var cancellables: Set<AnyCancellable> = []
 
     // Attempts to register a new user with the provided details.
-    func signUp() {
+    func signUp(firstName: String, lastName: String, email: String, username: String, password: String, confirmPassword: String, errorMessage: Binding<String?>) {
         // Ensure the passwords entered match.
         guard password == confirmPassword else {
-            errorMessage = "Passwords do not match."
+            errorMessage.wrappedValue = "Passwords do not match."
             return
         }
 
@@ -66,7 +60,7 @@ class SignUpViewModel: ObservableObject {
                 // Handle errors during signup.
                 if case let .failure(error) = completion {
                     DispatchQueue.main.async {
-                        self.errorMessage = error.localizedDescription
+                        errorMessage.wrappedValue = error.localizedDescription
                     }
                 }
             }, receiveValue: { response in
@@ -74,7 +68,7 @@ class SignUpViewModel: ObservableObject {
                 SessionManager.shared.signUp(token: response.token, user: response.user)
                 DispatchQueue.main.async {
                     self.isSignUpComplete = true
-                    self.errorMessage = nil
+                    errorMessage.wrappedValue = nil
                 }
             })
             .store(in: &cancellables)

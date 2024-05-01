@@ -10,6 +10,9 @@ import SwiftUI
 
 struct LoginView: View {
     @ObservedObject var viewModel = LoginViewModel()
+    @State private var username = ""
+    @State private var password = ""
+    @State private var errorMessage: String?
 
     var body: some View {
         NavigationStack {
@@ -20,13 +23,13 @@ struct LoginView: View {
                     .font(.largeTitle)
                     .foregroundColor(.white)
                 
-                if let errorMessage = viewModel.errorMessage {
+                if let errorMessage = errorMessage {
                     Text(errorMessage)
                         .foregroundColor(.black)
                 }
                 
-                TextField("Username", text: $viewModel.username)
-                    .placeholder(when: viewModel.username.isEmpty) {
+                TextField("Username", text: $username)
+                    .placeholder(when: username.isEmpty) {
                         Text("Username").foregroundColor(.gray)
                     }
                     .padding()
@@ -34,8 +37,8 @@ struct LoginView: View {
                     .foregroundColor(.black)
                     .cornerRadius(5)
                 
-                SecureField("Password", text: $viewModel.password)
-                    .placeholder(when: viewModel.password.isEmpty) {
+                SecureField("Password", text: $password)
+                    .placeholder(when: password.isEmpty) {
                         Text("Password").foregroundColor(.gray)
                     }
                     .padding()
@@ -44,7 +47,7 @@ struct LoginView: View {
                     .cornerRadius(5)
                 
                 Button(action: {
-                    viewModel.login()
+                    viewModel.login(username: username, password: password, errorMessage: $errorMessage)
                 }) {
                     Text("Login")
                         .frame(maxWidth: .infinity)
@@ -68,6 +71,9 @@ struct LoginView: View {
             .ignoresSafeArea()
             .onTapGesture {
                 viewModel.dismissKeyboard()
+            }
+            .onAppear {
+                errorMessage = nil
             }
         }
     }

@@ -8,17 +8,15 @@
 import Foundation
 import Combine
 import UIKit
+import SwiftUI
 
 class LoginViewModel: ObservableObject {
-    @Published var username: String = ""
-    @Published var password: String = ""
     @Published var isLoggedIn: Bool = false
-    @Published var errorMessage: String?
 
     private var cancellables: Set<AnyCancellable> = []
     
     // Attempts to log in the user using provided credentials.
-    func login() {
+    func login(username: String, password: String, errorMessage: Binding<String?>) {
         let url = URL(string: "https://fryfteats.com/api/login")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -51,13 +49,13 @@ class LoginViewModel: ObservableObject {
             .sink(receiveCompletion: { completion in
                 // Handles error in case of failure.
                 if case let .failure(error) = completion {
-                    self.errorMessage = error.localizedDescription
+                    errorMessage.wrappedValue = error.localizedDescription
                 }
             }, receiveValue: { response in
                 // Sets the login state on successful login.
                 SessionManager.shared.login(token: response.token, user: response.user)
                 self.isLoggedIn = true
-                self.errorMessage = nil
+                errorMessage.wrappedValue = nil
             })
             .store(in: &cancellables)
     }
