@@ -26,10 +26,17 @@ struct RestaurantCard: View {
                     Button(action: {
                         viewModel.toggleFavorite()
                     }) {
-                        Image(systemName: viewModel.isFavorite ? "heart.fill" : "heart")
-                            .imageScale(.large)
-                            .font(.system(size: 20))
-                            .foregroundColor(viewModel.isFavorite ? .red : .gray)
+                        if viewModel.isFavoritesList {
+                            Image(systemName: "heart.fill")
+                                .imageScale(.large)
+                                .font(.system(size: 20))
+                                .foregroundColor(.red)
+                        } else {
+                            Image(systemName: viewModel.isFavorite ? "heart.fill" : "heart")
+                                .imageScale(.large)
+                                .font(.system(size: 20))
+                                .foregroundColor(viewModel.isFavorite ? .red : .gray)
+                        }
                     }
                     .padding([.top, .trailing])
                 }
