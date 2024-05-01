@@ -30,6 +30,7 @@
 		57BAD2C52BE19CC500D9FE69 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAD2C42BE19CC500D9FE69 /* ReportView.swift */; };
 		57BAD2C72BE19D4400D9FE69 /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAD2C62BE19D4400D9FE69 /* ReportViewModel.swift */; };
 		57BAD2C92BE1C45300D9FE69 /* MessageHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAD2C82BE1C45300D9FE69 /* MessageHostingController.swift */; };
+		57BAD2CB2BE1E00100D9FE69 /* MainTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAD2CA2BE1E00100D9FE69 /* MainTabViewModel.swift */; };
 		57CD455C2BDEEE8600E01778 /* FryftEatsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD455B2BDEEE8600E01778 /* FryftEatsApp.swift */; };
 		57CD45602BDEEE8900E01778 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CD455F2BDEEE8900E01778 /* Assets.xcassets */; };
 		57CD45632BDEEE8900E01778 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CD45622BDEEE8900E01778 /* Preview Assets.xcassets */; };
@@ -96,6 +97,7 @@
 		57BAD2C42BE19CC500D9FE69 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		57BAD2C62BE19D4400D9FE69 /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
 		57BAD2C82BE1C45300D9FE69 /* MessageHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHostingController.swift; sourceTree = "<group>"; };
+		57BAD2CA2BE1E00100D9FE69 /* MainTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewModel.swift; sourceTree = "<group>"; };
 		57CD45582BDEEE8600E01778 /* FryftEats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FryftEats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57CD455B2BDEEE8600E01778 /* FryftEatsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FryftEatsApp.swift; sourceTree = "<group>"; };
 		57CD455F2BDEEE8900E01778 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				5794303B2BE06BCD0012DB89 /* SearchViewModel.swift */,
 				5794303F2BE089420012DB89 /* RestaurantDetailsViewModel.swift */,
 				57BAD2C62BE19D4400D9FE69 /* ReportViewModel.swift */,
+				57BAD2CA2BE1E00100D9FE69 /* MainTabViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				579430322BE010400012DB89 /* RestaurantViewModel.swift in Sources */,
 				579430242BDF18E30012DB89 /* MainTabView.swift in Sources */,
 				57BAD2C92BE1C45300D9FE69 /* MessageHostingController.swift in Sources */,
+				57BAD2CB2BE1E00100D9FE69 /* MainTabViewModel.swift in Sources */,
 				579430262BDF19470012DB89 /* SearchView.swift in Sources */,
 				579430362BE0494C0012DB89 /* RestaurantListViewModel.swift in Sources */,
 				57BAD2C72BE19D4400D9FE69 /* ReportViewModel.swift in Sources */,
