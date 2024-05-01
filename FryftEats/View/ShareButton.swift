@@ -7,12 +7,16 @@
 
 import Foundation
 import SwiftUI
+import MessageUI
 
 struct ShareButton: View {
     var restaurant: Restaurant
-    
+    @State private var isShowingMessageComposer = false
+
     var body: some View {
-        Button(action: shareRestaurant) {
+        Button(action: {
+            self.isShowingMessageComposer = true
+        }) {
             Image(systemName: "square.and.arrow.up")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -22,18 +26,21 @@ struct ShareButton: View {
         .background(Color.white)
         .foregroundColor(.blue)
         .clipShape(RoundedRectangle(cornerRadius: 10))
+        .sheet(isPresented: $isShowingMessageComposer) {
+            MessageComposerView(isPresented: $isShowingMessageComposer, messageBody: "Check out \(restaurant.name) on FryftEats! Here's the link: \(restaurant.url ?? "Link not available")\nDownload FryftEats to discover more amazing places!")
+        }
+    }
+}
+
+struct MessageComposerView: UIViewControllerRepresentable {
+    @Binding var isPresented: Bool
+    var messageBody: String
+    
+    func makeUIViewController(context: Context) -> MessageHostingController {
+        MessageHostingController(messageBody: messageBody, onDismiss: {
+            self.isPresented = false
+        })
     }
     
-    func shareRestaurant() {
-        guard let url = URL(string: restaurant.url ?? "") else { return }
-        let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
-        
-        let keyWindow = UIApplication.shared.connectedScenes
-            .filter { $0.activationState == .foregroundActive }
-            .compactMap { $0 as? UIWindowScene }
-            .flatMap { $0.windows }
-            .first { $0.isKeyWindow }
-        
-        keyWindow?.rootViewController?.present(activityVC, animated: true, completion: nil)
-    }
+    func updateUIViewController(_ uiViewController: MessageHostingController, context: Context) {}
 }
