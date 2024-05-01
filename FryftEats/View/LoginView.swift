@@ -26,12 +26,18 @@ struct LoginView: View {
                 }
                 
                 TextField("Username", text: $viewModel.username)
+                    .placeholder(when: viewModel.username.isEmpty) {
+                        Text("Username").foregroundColor(.gray)
+                    }
                     .padding()
                     .background(Color.white)
                     .foregroundColor(.black)
                     .cornerRadius(5)
                 
                 SecureField("Password", text: $viewModel.password)
+                    .placeholder(when: viewModel.password.isEmpty) {
+                        Text("Password").foregroundColor(.gray)
+                    }
                     .padding()
                     .background(Color.white)
                     .foregroundColor(.black)

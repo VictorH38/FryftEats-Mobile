@@ -66,6 +66,9 @@ struct ReportView: View {
                     }
 
                     TextField("Additional notes", text: $viewModel.additionalNotes)
+                        .placeholder(when: viewModel.additionalNotes.isEmpty) {
+                            Text("Additional notes").foregroundColor(.gray)
+                        }
                         .padding()
                         .frame(height: 50)
                         .multilineTextAlignment(.leading)

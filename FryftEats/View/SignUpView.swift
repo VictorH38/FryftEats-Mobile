@@ -25,36 +25,54 @@ struct SignUpView: View {
             }
             
             TextField("First Name", text: $viewModel.firstName)
+                .placeholder(when: viewModel.firstName.isEmpty) {
+                    Text("First Name").foregroundColor(.gray)
+                }
                 .padding()
                 .background(Color.white)
                 .foregroundColor(.black)
                 .cornerRadius(5)
             
             TextField("Last Name", text: $viewModel.lastName)
+                .placeholder(when: viewModel.lastName.isEmpty) {
+                    Text("Last Name").foregroundColor(.gray)
+                }
                 .padding()
                 .background(Color.white)
                 .foregroundColor(.black)
                 .cornerRadius(5)
             
             TextField("Email", text: $viewModel.email)
+                .placeholder(when: viewModel.email.isEmpty) {
+                    Text("Email").foregroundColor(.gray)
+                }
                 .padding()
                 .background(Color.white)
                 .foregroundColor(.black)
                 .cornerRadius(5)
             
             TextField("Username", text: $viewModel.username)
+                .placeholder(when: viewModel.username.isEmpty) {
+                    Text("Username").foregroundColor(.gray)
+                }
                 .padding()
                 .background(Color.white)
                 .foregroundColor(.black)
                 .cornerRadius(5)
             
             SecureField("Password", text: $viewModel.password)
+                .placeholder(when: viewModel.password.isEmpty) {
+                    Text("Password").foregroundColor(.gray)
+                }
                 .padding()
                 .background(Color.white)
                 .foregroundColor(.black)
                 .cornerRadius(5)
             
             SecureField("Confirm Password", text: $viewModel.confirmPassword)
+                .placeholder(when: viewModel.confirmPassword.isEmpty) {
+                    Text("Confirm Password").foregroundColor(.gray)
+                }
                 .padding()
                 .background(Color.white)
                 .foregroundColor(.black)

@@ -22,6 +22,9 @@ struct SearchView: View {
             VStack(alignment: .leading) {
                 HStack {
                     TextField("Search Restaurants", text: $searchTerm)
+                        .placeholder(when: searchTerm.isEmpty) {
+                            Text("Search Restaurants").foregroundColor(.gray)
+                        }
                         .textFieldStyle(PlainTextFieldStyle())
                         .padding(8)
                         .background(Color.white)
