@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct ProfileView: View {
+    @StateObject var reportViewModel = ReportViewModel()
     @ObservedObject var sessionManager = SessionManager.shared
     
     var body: some View {
@@ -31,14 +32,17 @@ struct ProfileView: View {
                         
                         Spacer()
                         
-                        NavigationLink(destination: ReportView(viewModel: ReportViewModel())) {
+                        NavigationLink(destination: ReportView(viewModel: reportViewModel)
+                                        .onAppear {
+                                            reportViewModel.update(restaurantId: nil)
+                                        }) {
                             Text("Report a Restaurant")
-                                .frame(maxWidth: .infinity)
+                                .frame(minWidth: 0, maxWidth: .infinity)
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(Color.black)
+                                .cornerRadius(10)
                         }
-                        .padding()
-                        .background(Color.black)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
 
                         Button(action: {
                             sessionManager.logout()

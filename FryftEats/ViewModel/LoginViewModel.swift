@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import UIKit
 
 class LoginViewModel: ObservableObject {
     @Published var username: String = ""
@@ -59,6 +60,11 @@ class LoginViewModel: ObservableObject {
                 self.errorMessage = nil
             })
             .store(in: &cancellables)
+    }
+    
+    // Dismisses keyboard
+    func dismissKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 

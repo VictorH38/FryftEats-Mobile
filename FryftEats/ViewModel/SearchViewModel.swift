@@ -7,6 +7,7 @@
 
 import Foundation
 import CryptoKit
+import UIKit
 
 class SearchViewModel: ObservableObject {
     @Published var restaurants: [Restaurant] = []
@@ -205,6 +206,11 @@ class SearchViewModel: ObservableObject {
             }
             if let data = data, let _ = try? JSONDecoder().decode([String: String].self, from: data) {}
         }.resume()
+    }
+    
+    // Dismisses keyboard
+    func dismissKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 
     // Formats the price filter for API calls.

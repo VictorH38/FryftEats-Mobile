@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import UIKit
 
 class SignUpViewModel: ObservableObject {
     @Published var firstName: String = ""
@@ -77,6 +78,11 @@ class SignUpViewModel: ObservableObject {
                 }
             })
             .store(in: &cancellables)
+    }
+    
+    // Dismisses keyboard
+    func dismissKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 

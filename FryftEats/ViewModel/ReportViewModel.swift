@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import UIKit
 
 class ReportViewModel: ObservableObject {
     @Published var restaurants: [Restaurant] = []
@@ -19,16 +20,29 @@ class ReportViewModel: ObservableObject {
     @Published var isSuccess = false
     
     private var cancellables: Set<AnyCancellable> = []
-    private var isInitiatedFromDetails: Bool
 
-    init(restaurantId: Int? = nil) {
-        self.isInitiatedFromDetails = restaurantId != nil
+    init() {
+        self.selectedRestaurantId = nil
+    }
+    
+    // Resets report form to default values
+    func resetReportForm() {
+        self.selectedRestaurantId = nil
+        self.reason = "Outside of Fryft zone"
+        self.additionalNotes = ""
+        self.successMessage = nil
+        self.errorMessage = nil
+    }
+    
+    // Updates the selected restaurant for the report and fetches restaurants
+    func update(restaurantId: Int?) {
         self.selectedRestaurantId = restaurantId
         fetchRestaurants()
     }
     
     // Fetches a list of restaurants from the server
     func fetchRestaurants() {
+        print("poop")
         isLoading = true
         let url = URL(string: "https://fryfteats.com/api/restaurants?sort=name&order=asc")!
         
@@ -60,13 +74,6 @@ class ReportViewModel: ObservableObject {
                 }
             }, receiveValue: { [weak self] response in
                 self?.restaurants = response.data
-                if !self!.isInitiatedFromDetails {
-                    self?.selectedRestaurantId = response.data.first?.id
-                }
-                self?.reason = "Outside of Fryft zone"
-                self?.additionalNotes = ""
-                self?.successMessage = nil
-                self?.errorMessage = nil
             })
             .store(in: &cancellables)
     }
@@ -129,6 +136,11 @@ class ReportViewModel: ObservableObject {
                 }
             }
         }.resume()
+    }
+    
+    // Dismisses keyboard
+    func dismissKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 

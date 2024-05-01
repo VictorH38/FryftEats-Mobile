@@ -77,6 +77,9 @@ struct SignUpView: View {
         .padding()
         .background(Color(hex: "#990000"))
         .ignoresSafeArea()
+        .onTapGesture {
+            viewModel.dismissKeyboard()
+        }
     }
 }
 

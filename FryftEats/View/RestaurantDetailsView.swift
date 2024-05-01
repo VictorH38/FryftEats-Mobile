@@ -11,6 +11,7 @@ import CoreLocation
 
 struct RestaurantDetailsView: View {
     @ObservedObject var viewModel: RestaurantDetailsViewModel
+    @StateObject var reportViewModel = ReportViewModel()
     @ObservedObject var sessionManager = SessionManager.shared
     
     var body: some View {
@@ -85,7 +86,10 @@ struct RestaurantDetailsView: View {
                     
                     Spacer()
 
-                    NavigationLink(destination: ReportView(viewModel: ReportViewModel(restaurantId: viewModel.restaurant.id))) {
+                    NavigationLink(destination: ReportView(viewModel: reportViewModel)
+                                    .onAppear {
+                                        reportViewModel.update(restaurantId: viewModel.restaurant.id!)
+                                    }) {
                         Text("Report")
                             .frame(minWidth: 0, maxWidth: .infinity)
                             .padding()

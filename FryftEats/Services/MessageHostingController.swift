@@ -29,9 +29,7 @@ class MessageHostingController: UIViewController {
     // Presents the message compose view controller shortly after the view appears.
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.presentMessageCompose()
-        }
+        presentMessageCompose()
     }
 
     // Presents the message compose interface if possible.
@@ -40,11 +38,8 @@ class MessageHostingController: UIViewController {
             let messageVC = MFMessageComposeViewController()
             messageVC.body = messageBody
             messageVC.messageComposeDelegate = self
-            self.present(messageVC, animated: true) {
-                print("Message compose view presented")
-            }
+            self.present(messageVC, animated: true, completion: nil)
         } else {
-            print("Cannot send text")
             self.dismiss(animated: true, completion: onDismiss)
         }
     }
@@ -53,7 +48,6 @@ class MessageHostingController: UIViewController {
 // Conforms to MFMessageComposeViewControllerDelegate to handle the message composition result.
 extension MessageHostingController: MFMessageComposeViewControllerDelegate {
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
-        print("Message compose view is dismissing")
         controller.dismiss(animated: true, completion: onDismiss)
     }
 }

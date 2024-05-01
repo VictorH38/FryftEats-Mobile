@@ -17,6 +17,7 @@ struct RestaurantCard: View {
             HStack {
                 Text(viewModel.restaurant.name)
                     .font(.headline)
+                    .foregroundColor(Color.black)
                     .padding([.top, .leading])
 
                 Spacer()
@@ -58,9 +59,11 @@ struct RestaurantCard: View {
                 VStack(alignment: .leading, spacing: 5) {
                     Text(viewModel.firstPartOfAddress(viewModel.restaurant.address))
                         .font(.subheadline)
+                        .foregroundColor(Color.black)
                     if let phone = viewModel.restaurant.phoneNumber {
                         Text(phone)
                             .font(.subheadline)
+                            .foregroundColor(Color.black)
                     }
                     if let rating = viewModel.restaurant.rating {
                         StarRating(rating: rating)

@@ -22,14 +22,22 @@ struct SearchView: View {
             VStack(alignment: .leading) {
                 HStack {
                     TextField("Search Restaurants", text: $searchTerm)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .textFieldStyle(PlainTextFieldStyle())
+                        .padding(8)
+                        .background(Color.white)
+                        .foregroundColor(.black)
+                        .cornerRadius(5)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 5)
+                                .stroke(Color.gray, lineWidth: 1)
+                        )
                     
                     Button(action: {
                         viewModel.searchRestaurants(term: searchTerm, price: selectedPrice, sortBy: selectedSortBy)
                     }) {
                         Text("Search")
                     }
-                    .padding(.vertical, 7)
+                    .padding(.vertical, 9)
                     .padding(.horizontal)
                     .background(Color.blue)
                     .foregroundColor(.white)
@@ -84,6 +92,9 @@ struct SearchView: View {
             .background(Color(hex: "#990000"))
             .onAppear {
                 viewModel.refreshSearchResults(term: searchTerm, price: selectedPrice, sortBy: selectedSortBy)
+            }
+            .onTapGesture {
+                viewModel.dismissKeyboard()
             }
         }
     }

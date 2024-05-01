@@ -39,6 +39,7 @@ struct ReportView: View {
                             .padding(.leading)
                         
                         Picker("Select Restaurant", selection: $viewModel.selectedRestaurantId) {
+                            Text("-- Restaurant --").tag(nil as Int?).foregroundColor(.gray)
                             ForEach(viewModel.restaurants, id: \.id) { restaurant in
                                 Text(restaurant.name).tag(restaurant.id as Int?)
                             }
@@ -46,7 +47,7 @@ struct ReportView: View {
                         .frame(height: 60)
                         .background(Color.white)
                         .cornerRadius(10)
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                     }
                     
                     HStack {
@@ -61,7 +62,7 @@ struct ReportView: View {
                         }
                         .background(Color.white)
                         .cornerRadius(10)
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                     }
 
                     TextField("Additional notes", text: $viewModel.additionalNotes)
@@ -69,8 +70,8 @@ struct ReportView: View {
                         .frame(height: 50)
                         .multilineTextAlignment(.leading)
                         .background(Color.white)
-                        .cornerRadius(10)
                         .foregroundColor(.black)
+                        .cornerRadius(10)
                     
                     Button(action: {
                         viewModel.submitReport()
@@ -92,8 +93,11 @@ struct ReportView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color(hex: "#990000"))
-            .onAppear {
-                viewModel.fetchRestaurants()
+            .onTapGesture {
+                viewModel.dismissKeyboard()
+            }
+            .onDisappear {
+                viewModel.resetReportForm()
             }
         }
     }
