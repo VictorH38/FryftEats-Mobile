@@ -127,4 +127,25 @@ extension Restaurant {
             )
         ]
     }
+    
+    func dictionaryRepresentation() -> [String: Any] {
+        let dateFormatter = ISO8601DateFormatter()
+        dateFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+
+        return [
+            "id": id!,
+            "name": name,
+            "address": address,
+            "phone_number": phoneNumber ?? "",
+            "cuisine": cuisine ?? "",
+            "rating": rating!,
+            "price": price ?? "",
+            "url": url ?? "",
+            "image_url": imageUrl ?? "",
+            "latitude": String(latitude!),
+            "longitude": String(longitude!),
+            "created_at": dateFormatter.string(from: createdAt!),
+            "updated_at": dateFormatter.string(from: updatedAt!)
+        ]
+    }
 }

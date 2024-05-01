@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CryptoKit
 
 class SearchViewModel: ObservableObject {
     @Published var restaurants: [Restaurant] = []
@@ -26,14 +27,16 @@ class SearchViewModel: ObservableObject {
         ]
         
         let cacheKey = createCacheKey(queryParams: queryParams)
-        if let cachedRestaurants = fetchFromCache(cacheKey: cacheKey) {
-            self.restaurants = cachedRestaurants
-            self.hasSearched = true
-            return
+        getFromCache(cacheKey: cacheKey) { cachedRestaurants in
+            if !cachedRestaurants.isEmpty {
+                DispatchQueue.main.async {
+                    self.restaurants = cachedRestaurants
+                    self.hasSearched = true
+                }
+            } else {
+                self.fetchRestaurants(queryParams: queryParams, cacheKey: cacheKey)
+            }
         }
-
-        fetchRestaurants(queryParams: queryParams, cacheKey: cacheKey)
-        self.hasSearched = true
     }
 
     private func fetchRestaurants(queryParams: [String: Any], cacheKey: String) {
@@ -69,7 +72,8 @@ class SearchViewModel: ObservableObject {
 
                 group.notify(queue: .main) {
                     self?.restaurants = newRestaurants
-                    self?.cacheResults(cacheKey: cacheKey, restaurants: newRestaurants)
+                    self?.hasSearched = true
+                    self?.storeInCache(restaurants: newRestaurants, cacheKey: cacheKey)
                 }
             } catch {
                 print("Failed to decode response: \(error.localizedDescription)")
@@ -146,28 +150,54 @@ class SearchViewModel: ObservableObject {
     
     private func createCacheKey(queryParams: [String: Any]) -> String {
         let sortedParams = queryParams.sorted(by: { $0.key < $1.key })
-        return sortedParams.map { "\($0.key)=\($0.value)" }.joined(separator: "&").hashValue.description
+        let paramString = sortedParams.map { "\($0.key)=\($0.value)" }.joined(separator: "&")
+        
+        let hash = SHA256.hash(data: Data(paramString.utf8))
+        return "mobile-yelp-search-\(hash.compactMap { String(format: "%02x", $0) }.joined())"
     }
     
-    private func cacheResults(cacheKey: String, restaurants: [Restaurant]) {
-        let encoder = JSONEncoder()
-        if let encodedData = try? encoder.encode(restaurants) {
-            UserDefaults.standard.set(encodedData, forKey: cacheKey)
-            UserDefaults.standard.set(Date(), forKey: "\(cacheKey)-timestamp")
-        }
+    private func getFromCache(cacheKey: String, completion: @escaping ([Restaurant]) -> Void) {
+        guard let url = URL(string: "https://fryfteats.com/api/cache/\(cacheKey)") else { return }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print("Error fetching cache: \(error?.localizedDescription ?? "Unknown error")")
+                completion([])
+                return
+            }
+            
+            do {
+                let restaurants = try JSONDecoder().decode([Restaurant].self, from: data)
+                completion(restaurants)
+            } catch {
+                print("Failed to decode cached data: \(error)")
+                completion([])
+            }
+        }.resume()
     }
 
-    private func fetchFromCache(cacheKey: String) -> [Restaurant]? {
-        let currentDate = Date()
-        if let timestamp = UserDefaults.standard.object(forKey: "\(cacheKey)-timestamp") as? Date {
-            if currentDate.timeIntervalSince(timestamp) < 604800 {
-                if let cachedData = UserDefaults.standard.data(forKey: cacheKey),
-                    let cachedRestaurants = try? JSONDecoder().decode([Restaurant].self, from: cachedData) {
-                    return cachedRestaurants
-                }
+    private func storeInCache(restaurants: [Restaurant], cacheKey: String) {
+        guard let url = URL(string: "https://fryfteats.com/api/cache"), !restaurants.isEmpty else { return }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        let body: [String: Any] = [
+            "cache_key": cacheKey,
+            "data": restaurants.map { $0.dictionaryRepresentation() }
+        ]
+        
+        request.httpBody = try? JSONSerialization.data(withJSONObject: body)
+
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                print("Failed to cache data: \(error?.localizedDescription ?? "Unknown error")")
+                return
             }
-        }
-        return nil
+            if let data = data, let _ = try? JSONDecoder().decode([String: String].self, from: data) {}
+        }.resume()
     }
 
     private func formatPrice(_ price: String) -> String {
