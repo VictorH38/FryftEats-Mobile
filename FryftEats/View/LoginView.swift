@@ -13,6 +13,11 @@ struct LoginView: View {
     @State private var username = ""
     @State private var password = ""
     @State private var errorMessage: String?
+    @FocusState private var focusedField: Field?
+
+    enum Field: Hashable {
+        case username, password
+    }
 
     var body: some View {
         NavigationStack {
@@ -36,6 +41,10 @@ struct LoginView: View {
                     .background(Color.white)
                     .foregroundColor(.black)
                     .cornerRadius(5)
+                    .focused($focusedField, equals: .username)
+                    .onSubmit {
+                        focusedField = .password
+                    }
                 
                 SecureField("Password", text: $password)
                     .placeholder(when: password.isEmpty) {
@@ -45,6 +54,10 @@ struct LoginView: View {
                     .background(Color.white)
                     .foregroundColor(.black)
                     .cornerRadius(5)
+                    .focused($focusedField, equals: .password)
+                    .onSubmit {
+                        viewModel.login(username: username, password: password, errorMessage: $errorMessage)
+                    }
                 
                 Button(action: {
                     viewModel.login(username: username, password: password, errorMessage: $errorMessage)
@@ -74,6 +87,7 @@ struct LoginView: View {
             }
             .onAppear {
                 errorMessage = nil
+                focusedField = nil
             }
         }
     }

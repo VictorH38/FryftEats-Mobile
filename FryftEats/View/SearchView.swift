@@ -34,11 +34,15 @@ struct SearchView: View {
                             RoundedRectangle(cornerRadius: 5)
                                 .stroke(Color.gray, lineWidth: 1)
                         )
+                        .onSubmit {
+                            viewModel.searchRestaurants(term: searchTerm, price: selectedPrice, sortBy: selectedSortBy)
+                        }
                     
                     Button(action: {
                         viewModel.searchRestaurants(term: searchTerm, price: selectedPrice, sortBy: selectedSortBy)
                     }) {
-                        Text("Search")
+                        Image(systemName: "magnifyingglass")
+                            .imageScale(.medium)
                     }
                     .padding(.vertical, 9)
                     .padding(.horizontal)

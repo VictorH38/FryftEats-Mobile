@@ -17,6 +17,11 @@ struct SignUpView: View {
     @State private var password = ""
     @State private var confirmPassword = ""
     @State private var errorMessage: String?
+    @FocusState private var focusedField: Field?
+
+    enum Field: Hashable {
+        case firstName, lastName, email, username, password, confirmPassword
+    }
 
     var body: some View {
         VStack {
@@ -39,6 +44,10 @@ struct SignUpView: View {
                 .background(Color.white)
                 .foregroundColor(.black)
                 .cornerRadius(5)
+                .focused($focusedField, equals: .firstName)
+                .onSubmit {
+                    focusedField = .lastName
+                }
             
             TextField("Last Name", text: $lastName)
                 .placeholder(when: lastName.isEmpty) {
@@ -48,6 +57,10 @@ struct SignUpView: View {
                 .background(Color.white)
                 .foregroundColor(.black)
                 .cornerRadius(5)
+                .focused($focusedField, equals: .lastName)
+                .onSubmit {
+                    focusedField = .email
+                }
             
             TextField("Email", text: $email)
                 .placeholder(when: email.isEmpty) {
@@ -57,6 +70,10 @@ struct SignUpView: View {
                 .background(Color.white)
                 .foregroundColor(.black)
                 .cornerRadius(5)
+                .focused($focusedField, equals: .email)
+                .onSubmit {
+                    focusedField = .username
+                }
             
             TextField("Username", text: $username)
                 .placeholder(when: username.isEmpty) {
@@ -66,6 +83,10 @@ struct SignUpView: View {
                 .background(Color.white)
                 .foregroundColor(.black)
                 .cornerRadius(5)
+                .focused($focusedField, equals: .username)
+                .onSubmit {
+                    focusedField = .password
+                }
             
             SecureField("Password", text: $password)
                 .placeholder(when: password.isEmpty) {
@@ -75,6 +96,10 @@ struct SignUpView: View {
                 .background(Color.white)
                 .foregroundColor(.black)
                 .cornerRadius(5)
+                .focused($focusedField, equals: .password)
+                .onSubmit {
+                    focusedField = .confirmPassword
+                }
             
             SecureField("Confirm Password", text: $confirmPassword)
                 .placeholder(when: confirmPassword.isEmpty) {
@@ -84,6 +109,10 @@ struct SignUpView: View {
                 .background(Color.white)
                 .foregroundColor(.black)
                 .cornerRadius(5)
+                .focused($focusedField, equals: .confirmPassword)
+                .onSubmit {
+                    viewModel.signUp(firstName: firstName, lastName: lastName, email: email, username: username, password: password, confirmPassword: confirmPassword, errorMessage: $errorMessage)
+                }
             
             Button(action: {
                 viewModel.signUp(firstName: firstName, lastName: lastName, email: email, username: username, password: password, confirmPassword: confirmPassword, errorMessage: $errorMessage)
@@ -107,6 +136,7 @@ struct SignUpView: View {
         }
         .onAppear {
             errorMessage = nil
+            focusedField = nil
         }
     }
 }
