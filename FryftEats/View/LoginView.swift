@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Login: View {
+struct LoginView: View {
     @ObservedObject var viewModel = LoginViewModel()
 
     var body: some View {
@@ -49,7 +49,7 @@ struct Login: View {
                 .foregroundColor(.white)
                 .cornerRadius(5)
                 
-                NavigationLink(destination: SignUp()) {
+                NavigationLink(destination: SignUpView()) {
                     Text("Don't have an account yet? Sign Up")
                         .foregroundColor(.white)
                 }
@@ -65,5 +65,5 @@ struct Login: View {
 }
 
 #Preview {
-    Login()
+    LoginView()
 }

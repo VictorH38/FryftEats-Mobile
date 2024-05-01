@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import CoreLocation
 
-struct RestaurantDetails: View {
+struct RestaurantDetailsView: View {
     @ObservedObject var viewModel: RestaurantDetailsViewModel
     @ObservedObject var sessionManager = SessionManager.shared
     
@@ -71,16 +71,29 @@ struct RestaurantDetails: View {
                    let userLocation = sessionManager.currentLocation {
                     LyftRideButton(
                         pickup: CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude),
-                        destination: CLLocationCoordinate2D(latitude: restaurantLat, longitude: restaurantLong)
+                        destination: CLLocationCoordinate2D(latitude: Double(restaurantLat)!, longitude: Double(restaurantLong)!)
                     )
-                    .frame(width: .infinity, height: 55)
+                    .frame(height: 55)
                     .cornerRadius(10)
                     .frame(maxWidth: .infinity)
                     .background(Color(hex: "#990000"))
                     .padding(.top, 10)
                 }
                 
-                ShareButton(restaurant: viewModel.restaurant)
+                HStack {
+                    ShareButton(restaurant: viewModel.restaurant)
+                    
+                    Spacer()
+
+                    NavigationLink(destination: ReportView(viewModel: ReportViewModel(restaurantId: viewModel.restaurant.id))) {
+                        Text("Report")
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                            .padding()
+                            .foregroundColor(.white)
+                            .background(Color.gray)
+                            .cornerRadius(10)
+                    }
+                }
             }
         }
         .padding()
@@ -89,7 +102,7 @@ struct RestaurantDetails: View {
 }
 
 #Preview {
-    RestaurantDetails(viewModel: RestaurantDetailsViewModel(
+    RestaurantDetailsView(viewModel: RestaurantDetailsViewModel(
         restaurant: Restaurant.sampleRestaurants[0]
     ))
 }

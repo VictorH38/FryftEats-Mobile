@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Favorites: View {
+struct FavoritesView: View {
     @ObservedObject var viewModel = FavoritesViewModel()
 
     var body: some View {
@@ -53,5 +53,5 @@ struct Favorites: View {
 }
 
 #Preview {
-    Favorites(viewModel: FavoritesViewModel())
+    FavoritesView(viewModel: FavoritesViewModel())
 }

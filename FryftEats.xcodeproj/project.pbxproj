@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		47962AAC2E0815078255DA0B /* Pods_FryftEats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34674ADB67F495EC8A4A1A43 /* Pods_FryftEats.framework */; };
 		579430242BDF18E30012DB89 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430232BDF18E30012DB89 /* MainTabView.swift */; };
-		579430262BDF19470012DB89 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430252BDF19470012DB89 /* Search.swift */; };
-		579430282BDF194F0012DB89 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430272BDF194F0012DB89 /* Favorites.swift */; };
-		5794302A2BDF195E0012DB89 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430292BDF195E0012DB89 /* Profile.swift */; };
+		579430262BDF19470012DB89 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430252BDF19470012DB89 /* SearchView.swift */; };
+		579430282BDF194F0012DB89 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430272BDF194F0012DB89 /* FavoritesView.swift */; };
+		5794302A2BDF195E0012DB89 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430292BDF195E0012DB89 /* ProfileView.swift */; };
 		5794302C2BDF1E620012DB89 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5794302B2BDF1E620012DB89 /* ColorExtensions.swift */; };
 		5794302E2BE00F6A0012DB89 /* RestaurantCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5794302D2BE00F6A0012DB89 /* RestaurantCard.swift */; };
 		579430302BE00F750012DB89 /* RestaurantList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5794302F2BE00F750012DB89 /* RestaurantList.swift */; };
@@ -23,10 +23,12 @@
 		5794303C2BE06BCD0012DB89 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5794303B2BE06BCD0012DB89 /* SearchViewModel.swift */; };
 		5794303E2BE06C050012DB89 /* YelpBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5794303D2BE06C050012DB89 /* YelpBusiness.swift */; };
 		579430402BE089420012DB89 /* RestaurantDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5794303F2BE089420012DB89 /* RestaurantDetailsViewModel.swift */; };
-		579430422BE0895A0012DB89 /* RestaurantDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430412BE0895A0012DB89 /* RestaurantDetails.swift */; };
+		579430422BE0895A0012DB89 /* RestaurantDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430412BE0895A0012DB89 /* RestaurantDetailsView.swift */; };
 		579430452BE0B3C50012DB89 /* LyftRideButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579430442BE0B3C50012DB89 /* LyftRideButton.swift */; };
 		57BAD2BF2BE171AA00D9FE69 /* LyftService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAD2BE2BE171AA00D9FE69 /* LyftService.swift */; };
 		57BAD2C12BE17EA300D9FE69 /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAD2C02BE17EA300D9FE69 /* ShareButton.swift */; };
+		57BAD2C52BE19CC500D9FE69 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAD2C42BE19CC500D9FE69 /* ReportView.swift */; };
+		57BAD2C72BE19D4400D9FE69 /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAD2C62BE19D4400D9FE69 /* ReportViewModel.swift */; };
 		57CD455C2BDEEE8600E01778 /* FryftEatsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD455B2BDEEE8600E01778 /* FryftEatsApp.swift */; };
 		57CD45602BDEEE8900E01778 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CD455F2BDEEE8900E01778 /* Assets.xcassets */; };
 		57CD45632BDEEE8900E01778 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CD45622BDEEE8900E01778 /* Preview Assets.xcassets */; };
@@ -39,10 +41,10 @@
 		57CD45932BDEF3E800E01778 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD45922BDEF3E800E01778 /* Report.swift */; };
 		57CD45982BDEFEC300E01778 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD45972BDEFEC300E01778 /* SessionManager.swift */; };
 		57CD459A2BDEFEE200E01778 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD45992BDEFEE200E01778 /* LoginViewModel.swift */; };
-		57CD459E2BDEFF3C00E01778 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD459D2BDEFF3C00E01778 /* Login.swift */; };
+		57CD459E2BDEFF3C00E01778 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD459D2BDEFF3C00E01778 /* LoginView.swift */; };
 		57CD45A12BDF093900E01778 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD45A02BDF093800E01778 /* DateExtensions.swift */; };
 		57CD45A32BDF0BEB00E01778 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD45A22BDF0BEB00E01778 /* SignUpViewModel.swift */; };
-		57CD45A52BDF0BF900E01778 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD45A42BDF0BF900E01778 /* SignUp.swift */; };
+		57CD45A52BDF0BF900E01778 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD45A42BDF0BF900E01778 /* SignUpView.swift */; };
 		75F8558B2A4C18ACAEF6D65B /* Pods_FryftEats_FryftEatsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD302041FAD63D4CEC6EC36E /* Pods_FryftEats_FryftEatsUITests.framework */; };
 		8C96D934DE036AECA1148441 /* Pods_FryftEatsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 040C726350B25C5ECB131454 /* Pods_FryftEatsTests.framework */; };
 /* End PBXBuildFile section */
@@ -71,9 +73,9 @@
 		3E7B35B737BA249E67BA7926 /* Pods-FryftEatsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FryftEatsTests.release.xcconfig"; path = "Target Support Files/Pods-FryftEatsTests/Pods-FryftEatsTests.release.xcconfig"; sourceTree = "<group>"; };
 		44373AAD5DCD8A87CF66D594 /* Pods-FryftEats-FryftEatsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FryftEats-FryftEatsUITests.release.xcconfig"; path = "Target Support Files/Pods-FryftEats-FryftEatsUITests/Pods-FryftEats-FryftEatsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		579430232BDF18E30012DB89 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
-		579430252BDF19470012DB89 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
-		579430272BDF194F0012DB89 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
-		579430292BDF195E0012DB89 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		579430252BDF19470012DB89 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		579430272BDF194F0012DB89 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		579430292BDF195E0012DB89 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		5794302B2BDF1E620012DB89 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		5794302D2BE00F6A0012DB89 /* RestaurantCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCard.swift; sourceTree = "<group>"; };
 		5794302F2BE00F750012DB89 /* RestaurantList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantList.swift; sourceTree = "<group>"; };
@@ -85,11 +87,13 @@
 		5794303B2BE06BCD0012DB89 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		5794303D2BE06C050012DB89 /* YelpBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpBusiness.swift; sourceTree = "<group>"; };
 		5794303F2BE089420012DB89 /* RestaurantDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsViewModel.swift; sourceTree = "<group>"; };
-		579430412BE0895A0012DB89 /* RestaurantDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetails.swift; sourceTree = "<group>"; };
+		579430412BE0895A0012DB89 /* RestaurantDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsView.swift; sourceTree = "<group>"; };
 		579430432BE09D4D0012DB89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		579430442BE0B3C50012DB89 /* LyftRideButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyftRideButton.swift; sourceTree = "<group>"; };
 		57BAD2BE2BE171AA00D9FE69 /* LyftService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyftService.swift; sourceTree = "<group>"; };
 		57BAD2C02BE17EA300D9FE69 /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
+		57BAD2C42BE19CC500D9FE69 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		57BAD2C62BE19D4400D9FE69 /* ReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
 		57CD45582BDEEE8600E01778 /* FryftEats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FryftEats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57CD455B2BDEEE8600E01778 /* FryftEatsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FryftEatsApp.swift; sourceTree = "<group>"; };
 		57CD455F2BDEEE8900E01778 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,10 +109,10 @@
 		57CD45922BDEF3E800E01778 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		57CD45972BDEFEC300E01778 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		57CD45992BDEFEE200E01778 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		57CD459D2BDEFF3C00E01778 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		57CD459D2BDEFF3C00E01778 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		57CD45A02BDF093800E01778 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		57CD45A22BDF0BEB00E01778 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
-		57CD45A42BDF0BF900E01778 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		57CD45A42BDF0BF900E01778 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		B53D681F246F8A1BA7E11E70 /* Pods-FryftEats.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FryftEats.release.xcconfig"; path = "Target Support Files/Pods-FryftEats/Pods-FryftEats.release.xcconfig"; sourceTree = "<group>"; };
 		BF2D9DEBF3843D2EE26F5773 /* Pods-FryftEatsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FryftEatsTests.debug.xcconfig"; path = "Target Support Files/Pods-FryftEatsTests/Pods-FryftEatsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D81C0F4DE18F1DC8AC5987DA /* Pods-FryftEats-FryftEatsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FryftEats-FryftEatsUITests.debug.xcconfig"; path = "Target Support Files/Pods-FryftEats-FryftEatsUITests/Pods-FryftEats-FryftEatsUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -222,18 +226,19 @@
 		57CD45862BDEF07600E01778 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				57CD459D2BDEFF3C00E01778 /* Login.swift */,
-				57CD45A42BDF0BF900E01778 /* SignUp.swift */,
+				57CD459D2BDEFF3C00E01778 /* LoginView.swift */,
+				57CD45A42BDF0BF900E01778 /* SignUpView.swift */,
 				579430232BDF18E30012DB89 /* MainTabView.swift */,
-				579430252BDF19470012DB89 /* Search.swift */,
-				579430272BDF194F0012DB89 /* Favorites.swift */,
-				579430292BDF195E0012DB89 /* Profile.swift */,
+				579430252BDF19470012DB89 /* SearchView.swift */,
+				579430272BDF194F0012DB89 /* FavoritesView.swift */,
+				579430292BDF195E0012DB89 /* ProfileView.swift */,
 				5794302D2BE00F6A0012DB89 /* RestaurantCard.swift */,
 				5794302F2BE00F750012DB89 /* RestaurantList.swift */,
 				579430372BE053380012DB89 /* StarRating.swift */,
-				579430412BE0895A0012DB89 /* RestaurantDetails.swift */,
+				579430412BE0895A0012DB89 /* RestaurantDetailsView.swift */,
 				579430442BE0B3C50012DB89 /* LyftRideButton.swift */,
 				57BAD2C02BE17EA300D9FE69 /* ShareButton.swift */,
+				57BAD2C42BE19CC500D9FE69 /* ReportView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -248,6 +253,7 @@
 				579430392BE0570F0012DB89 /* FavoritesViewModel.swift */,
 				5794303B2BE06BCD0012DB89 /* SearchViewModel.swift */,
 				5794303F2BE089420012DB89 /* RestaurantDetailsViewModel.swift */,
+				57BAD2C62BE19D4400D9FE69 /* ReportViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -531,20 +537,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5794302A2BDF195E0012DB89 /* Profile.swift in Sources */,
+				5794302A2BDF195E0012DB89 /* ProfileView.swift in Sources */,
 				57CD458D2BDEF3C400E01778 /* Restaurant.swift in Sources */,
 				57CD45A32BDF0BEB00E01778 /* SignUpViewModel.swift in Sources */,
 				57CD458B2BDEF30B00E01778 /* User.swift in Sources */,
 				57CD45982BDEFEC300E01778 /* SessionManager.swift in Sources */,
-				579430422BE0895A0012DB89 /* RestaurantDetails.swift in Sources */,
+				579430422BE0895A0012DB89 /* RestaurantDetailsView.swift in Sources */,
 				579430342BE040840012DB89 /* Favorite.swift in Sources */,
 				57CD45A12BDF093900E01778 /* DateExtensions.swift in Sources */,
 				579430302BE00F750012DB89 /* RestaurantList.swift in Sources */,
 				57BAD2C12BE17EA300D9FE69 /* ShareButton.swift in Sources */,
 				579430402BE089420012DB89 /* RestaurantDetailsViewModel.swift in Sources */,
 				57BAD2BF2BE171AA00D9FE69 /* LyftService.swift in Sources */,
+				57BAD2C52BE19CC500D9FE69 /* ReportView.swift in Sources */,
 				579430382BE053380012DB89 /* StarRating.swift in Sources */,
-				57CD45A52BDF0BF900E01778 /* SignUp.swift in Sources */,
+				57CD45A52BDF0BF900E01778 /* SignUpView.swift in Sources */,
 				57CD45932BDEF3E800E01778 /* Report.swift in Sources */,
 				5794302E2BE00F6A0012DB89 /* RestaurantCard.swift in Sources */,
 				5794303E2BE06C050012DB89 /* YelpBusiness.swift in Sources */,
@@ -552,12 +559,13 @@
 				57CD455C2BDEEE8600E01778 /* FryftEatsApp.swift in Sources */,
 				579430322BE010400012DB89 /* RestaurantViewModel.swift in Sources */,
 				579430242BDF18E30012DB89 /* MainTabView.swift in Sources */,
-				579430262BDF19470012DB89 /* Search.swift in Sources */,
+				579430262BDF19470012DB89 /* SearchView.swift in Sources */,
 				579430362BE0494C0012DB89 /* RestaurantListViewModel.swift in Sources */,
+				57BAD2C72BE19D4400D9FE69 /* ReportViewModel.swift in Sources */,
 				5794303C2BE06BCD0012DB89 /* SearchViewModel.swift in Sources */,
 				579430452BE0B3C50012DB89 /* LyftRideButton.swift in Sources */,
-				579430282BDF194F0012DB89 /* Favorites.swift in Sources */,
-				57CD459E2BDEFF3C00E01778 /* Login.swift in Sources */,
+				579430282BDF194F0012DB89 /* FavoritesView.swift in Sources */,
+				57CD459E2BDEFF3C00E01778 /* LoginView.swift in Sources */,
 				5794303A2BE0570F0012DB89 /* FavoritesViewModel.swift in Sources */,
 				57CD459A2BDEFEE200E01778 /* LoginViewModel.swift in Sources */,
 				5794302C2BDF1E620012DB89 /* ColorExtensions.swift in Sources */,

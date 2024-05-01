@@ -15,17 +15,17 @@ struct MainTabView: View {
     
     var body: some View {
         TabView {
-            Search()
+            SearchView()
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
                 }
             
-            Favorites()
+            FavoritesView()
                 .tabItem {
                     Label("Favorites", systemImage: "heart.fill")
                 }
             
-            Profile()
+            ProfileView()
                 .tabItem {
                     Label("Profile", systemImage: "person.fill")
                 }

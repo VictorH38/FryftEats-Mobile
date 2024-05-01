@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct SignUp: View {
+struct SignUpView: View {
     @ObservedObject var viewModel = SignUpViewModel()
 
     var body: some View {
@@ -81,5 +81,5 @@ struct SignUp: View {
 }
 
 #Preview {
-    SignUp()
+    SignUpView()
 }

@@ -15,7 +15,7 @@ struct RestaurantList: View {
         ScrollView {
             VStack {
                 ForEach(viewModel.restaurants, id: \.id) { restaurant in
-                    NavigationLink(destination: RestaurantDetails(viewModel: RestaurantDetailsViewModel(restaurant: restaurant))) {
+                    NavigationLink(destination: RestaurantDetailsView(viewModel: RestaurantDetailsViewModel(restaurant: restaurant))) {
                         RestaurantCard(viewModel: RestaurantViewModel(restaurant: restaurant, isFavoritesList: viewModel.isFavoritesList, listViewModel: viewModel))
                     }
                     .buttonStyle(PlainButtonStyle())

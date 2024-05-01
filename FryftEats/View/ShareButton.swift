@@ -16,7 +16,7 @@ struct ShareButton: View {
             Image(systemName: "square.and.arrow.up")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 24, height: 24)
+                .frame(width: 20, height: 20)
                 .padding()
         }
         .background(Color.white)

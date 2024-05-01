@@ -61,6 +61,11 @@ struct LyftRideButton: UIViewRepresentable {
     var pickup: CLLocationCoordinate2D
     var destination: CLLocationCoordinate2D
     
+    init(pickup: CLLocationCoordinate2D, destination: CLLocationCoordinate2D) {
+        self.pickup = pickup
+        self.destination = destination
+    }
+    
     func makeUIView(context: Context) -> LyftButton {
         let lyftButton = LyftButton()
         lyftButton.style = .multicolor
@@ -68,7 +73,5 @@ struct LyftRideButton: UIViewRepresentable {
         return lyftButton
     }
     
-    func updateUIView(_ uiView: LyftButton, context: Context) {
-        
-    }
+    func updateUIView(_ uiView: LyftButton, context: Context) {}
 }

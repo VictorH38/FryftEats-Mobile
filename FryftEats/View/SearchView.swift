@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Search: View {
+struct SearchView: View {
     @StateObject var viewModel = SearchViewModel()
     @State private var searchTerm = ""
     @State private var selectedPrice = "All Prices"
@@ -90,5 +90,5 @@ struct Search: View {
 }
 
 #Preview {
-    Search()
+    SearchView()
 }

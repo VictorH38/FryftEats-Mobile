@@ -78,30 +78,27 @@ class SearchViewModel: ObservableObject {
     }
 
     private func storeRestaurant(from business: YelpBusiness, completion: @escaping (Restaurant?) -> Void) {
-        let restaurant = Restaurant(
-            name: business.name,
-            address: business.location.displayAddress.joined(separator: ", "),
-            phoneNumber: business.displayPhone,
-            cuisine: business.categories.map { $0.title }.joined(separator: ", "),
-            rating: business.rating,
-            price: business.price,
-            url: business.url,
-            imageUrl: business.imageUrl,
-            latitude: business.coordinates.latitude,
-            longitude: business.coordinates.longitude
-        )
+        let restaurantDictionary: [String: Any] = [
+            "name": business.name,
+            "address": business.location.displayAddress.joined(separator: ", "),
+            "phone_number": business.displayPhone,
+            "cuisine": business.categories.map { $0.title }.joined(separator: ", "),
+            "rating": business.rating,
+            "price": business.price!,
+            "url": business.url,
+            "image_url": business.imageUrl,
+            "latitude": String(business.coordinates.latitude),
+            "longitude": String(business.coordinates.longitude)
+        ]
         
         guard let url = URL(string: "https://fryfteats.com/api/restaurants") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        let encoder = JSONEncoder()
-        if let jsonData = try? encoder.encode(restaurant) {
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: restaurantDictionary, options: [])
             request.httpBody = jsonData
-            
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .flexibleISO8601
 
             URLSession.shared.dataTask(with: request) { data, response, error in
                 guard let data = data, error == nil else {
@@ -111,9 +108,12 @@ class SearchViewModel: ObservableObject {
                     }
                     return
                 }
-                
+
                 if let response = response as? HTTPURLResponse, response.statusCode == 200 || response.statusCode == 201 {
                     do {
+                        let decoder = JSONDecoder()
+                        decoder.dateDecodingStrategy = .flexibleISO8601
+                        
                         let serverRestaurant = try decoder.decode(Restaurant.self, from: data)
                         DispatchQueue.main.async {
                             completion(serverRestaurant)
@@ -131,7 +131,8 @@ class SearchViewModel: ObservableObject {
                     }
                 }
             }.resume()
-        } else {
+        } catch {
+            print("Failed to create JSON data: \(error.localizedDescription)")
             completion(nil)
         }
     }

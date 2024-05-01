@@ -65,12 +65,6 @@ struct RestaurantCard: View {
                     if let rating = viewModel.restaurant.rating {
                         StarRating(rating: rating)
                     }
-
-                    if viewModel.isFavoritesList {
-                        Text("Added \(viewModel.timeAgo(from: Date()))")
-                            .font(.caption)
-                            .foregroundColor(.gray)
-                    }
                 }
                 .padding(.trailing)
             }
