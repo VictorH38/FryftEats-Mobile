@@ -20,7 +20,9 @@ class SignUpViewModel: ObservableObject {
 
     private var cancellables: Set<AnyCancellable> = []
 
+    // Attempts to register a new user with the provided details.
     func signUp() {
+        // Ensure the passwords entered match.
         guard password == confirmPassword else {
             errorMessage = "Passwords do not match."
             return
@@ -44,6 +46,7 @@ class SignUpViewModel: ObservableObject {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .flexibleISO8601
 
+        // Network request to send signup details to the server.
         URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { output in
                 guard let response = output.response as? HTTPURLResponse else {
@@ -59,12 +62,14 @@ class SignUpViewModel: ObservableObject {
             .decode(type: SignUpResponse.self, decoder: decoder)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
+                // Handle errors during signup.
                 if case let .failure(error) = completion {
                     DispatchQueue.main.async {
                         self.errorMessage = error.localizedDescription
                     }
                 }
             }, receiveValue: { response in
+                // Successful registration.
                 SessionManager.shared.signUp(token: response.token, user: response.user)
                 DispatchQueue.main.async {
                     self.isSignUpComplete = true
@@ -75,6 +80,7 @@ class SignUpViewModel: ObservableObject {
     }
 }
 
+// Data structure to parse the signup response.
 struct SignUpResponse: Codable {
     let message: String
     let token: String

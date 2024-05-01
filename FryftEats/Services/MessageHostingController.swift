@@ -10,10 +10,12 @@ import UIKit
 import MessageUI
 import SwiftUI
 
+// UIViewController subclass to host an MFMessageComposeViewController for sending SMS messages.
 class MessageHostingController: UIViewController {
     var messageBody: String
     var onDismiss: () -> Void
 
+    // Initializes the controller with a message body and a closure to execute upon dismissal.
     init(messageBody: String, onDismiss: @escaping () -> Void) {
         self.messageBody = messageBody
         self.onDismiss = onDismiss
@@ -24,6 +26,7 @@ class MessageHostingController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // Presents the message compose view controller shortly after the view appears.
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -31,6 +34,7 @@ class MessageHostingController: UIViewController {
         }
     }
 
+    // Presents the message compose interface if possible.
     private func presentMessageCompose() {
         if MFMessageComposeViewController.canSendText() {
             let messageVC = MFMessageComposeViewController()
@@ -46,6 +50,7 @@ class MessageHostingController: UIViewController {
     }
 }
 
+// Conforms to MFMessageComposeViewControllerDelegate to handle the message composition result.
 extension MessageHostingController: MFMessageComposeViewControllerDelegate {
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         print("Message compose view is dismissing")

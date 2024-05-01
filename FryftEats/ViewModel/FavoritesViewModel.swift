@@ -12,11 +12,14 @@ class FavoritesViewModel: ObservableObject {
     @Published var errorMessage: String?
     @Published var isLoading: Bool = false
 
+    // Initializes and fetches the favorite restaurants immediately.
     init() {
         fetchFavorites()
     }
 
+    // Fetches favorite restaurants from the server.
     func fetchFavorites() {
+        // Ensure user is logged in and has valid credentials.
         guard SessionManager.shared.isLoggedIn,
               let token = SessionManager.shared.token,
               let userId = SessionManager.shared.user?.id else {
@@ -71,6 +74,7 @@ class FavoritesViewModel: ObservableObject {
     }
 }
 
+// Codable structure to handle the response of favorites.
 struct FavoritesResponse: Codable {
     let data: [Restaurant]
 }

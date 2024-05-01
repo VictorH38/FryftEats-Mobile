@@ -26,7 +26,8 @@ class ReportViewModel: ObservableObject {
         self.selectedRestaurantId = restaurantId
         fetchRestaurants()
     }
-
+    
+    // Fetches a list of restaurants from the server
     func fetchRestaurants() {
         isLoading = true
         let url = URL(string: "https://fryfteats.com/api/restaurants?sort=name&order=asc")!
@@ -69,7 +70,8 @@ class ReportViewModel: ObservableObject {
             })
             .store(in: &cancellables)
     }
-
+    
+    // Submits a report to the server
     func submitReport() {
         guard let restaurantId = selectedRestaurantId else {
             errorMessage = "Please select a restaurant."
@@ -86,10 +88,6 @@ class ReportViewModel: ObservableObject {
             errorMessage = "Invalid URL"
             return
         }
-        
-        print("restaurant id: \(restaurantId)")
-        print("reason: \(reason)")
-        print("additionalNotes: \(additionalNotes)")
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -134,6 +132,7 @@ class ReportViewModel: ObservableObject {
     }
 }
 
+// Codable structure to handle the response of restaurants.
 struct RestaurantResponse: Codable {
     let data: [Restaurant]
 }

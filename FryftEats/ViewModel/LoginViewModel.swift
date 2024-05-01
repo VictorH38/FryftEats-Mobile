@@ -16,6 +16,7 @@ class LoginViewModel: ObservableObject {
 
     private var cancellables: Set<AnyCancellable> = []
     
+    // Attempts to log in the user using provided credentials.
     func login() {
         let url = URL(string: "https://fryfteats.com/api/login")!
         var request = URLRequest(url: url)
@@ -31,6 +32,7 @@ class LoginViewModel: ObservableObject {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .flexibleISO8601
 
+        // Starts the network request to log in.
         URLSession.shared.dataTaskPublisher(for: request)
             .tryMap { output in
                 guard let response = output.response as? HTTPURLResponse else {
@@ -46,10 +48,12 @@ class LoginViewModel: ObservableObject {
             .decode(type: LoginResponse.self, decoder: decoder)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
+                // Handles error in case of failure.
                 if case let .failure(error) = completion {
                     self.errorMessage = error.localizedDescription
                 }
             }, receiveValue: { response in
+                // Sets the login state on successful login.
                 SessionManager.shared.login(token: response.token, user: response.user)
                 self.isLoggedIn = true
                 self.errorMessage = nil
@@ -58,6 +62,7 @@ class LoginViewModel: ObservableObject {
     }
 }
 
+// Structures to parse the login response.
 struct LoginResponse: Codable {
     let message: String
     let token: String

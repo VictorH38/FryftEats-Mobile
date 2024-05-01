@@ -15,6 +15,7 @@ class RestaurantViewModel: ObservableObject {
     
     var restaurantListViewModel: RestaurantListViewModel?
     
+    // Initialize with specific restaurant details.
     init(restaurant: Restaurant, isFavoritesList: Bool, listViewModel: RestaurantListViewModel?) {
         self.restaurant = restaurant
         self.isFavoritesList = isFavoritesList
@@ -22,6 +23,7 @@ class RestaurantViewModel: ObservableObject {
         checkIfFavorite()
     }
     
+    // Check if the current restaurant is marked as favorite by the user.
     func checkIfFavorite() {
         guard let token = SessionManager.shared.token, let userId = SessionManager.shared.user?.id, let restaurantId = restaurant.id else {
             self.errorMessage = "User not logged in or token not available"
@@ -36,6 +38,7 @@ class RestaurantViewModel: ObservableObject {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .flexibleISO8601
 
+        // Make a GET request to fetch favorite status.
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, let response = response as? HTTPURLResponse, error == nil else {
                 DispatchQueue.main.async {
@@ -65,6 +68,7 @@ class RestaurantViewModel: ObservableObject {
         }.resume()
     }
     
+    // Toggle the favorite status of the restaurant.
     func toggleFavorite() {
         guard let token = SessionManager.shared.token, let userId = SessionManager.shared.user?.id, let restaurantId = restaurant.id else {
             self.errorMessage = "User not logged in or token not available"
@@ -83,6 +87,7 @@ class RestaurantViewModel: ObservableObject {
             request.httpBody = try? JSONEncoder().encode(body)
         }
 
+        // Make a POST or DELETE request to toggle favorite status.
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let response = response as? HTTPURLResponse else {
                 DispatchQueue.main.async {
@@ -104,10 +109,12 @@ class RestaurantViewModel: ObservableObject {
         }.resume()
     }
     
+    // Return the first part of an address.
     func firstPartOfAddress(_ address: String) -> String {
         address.components(separatedBy: ",").first ?? address
     }
     
+    // Calculate how much time has passed since a specific date.
     func timeAgo(from date: Date) -> String {
         let formatter = RelativeDateTimeFormatter()
         formatter.unitsStyle = .full
@@ -115,6 +122,7 @@ class RestaurantViewModel: ObservableObject {
     }
 }
 
+// Structure to decode the favorite status response.
 struct FavoriteResponse: Codable {
     var favorite: Favorite
 }

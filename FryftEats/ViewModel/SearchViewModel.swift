@@ -12,6 +12,7 @@ class SearchViewModel: ObservableObject {
     @Published var restaurants: [Restaurant] = []
     var hasSearched: Bool = false
 
+    // Initiates a search for restaurants with specified criteria.
     func searchRestaurants(term: String, price: String, sortBy: String) {
         let formattedPrice = formatPrice(price)
         let sortByParam = formatSortBy(sortBy)
@@ -39,6 +40,7 @@ class SearchViewModel: ObservableObject {
         }
     }
 
+    // Fetches restaurant data from Yelp API based on search parameters.
     private func fetchRestaurants(queryParams: [String: Any], cacheKey: String) {
         let baseUrl = URL(string: "https://api.yelp.com/v3/businesses/search")!
         var components = URLComponents(url: baseUrl, resolvingAgainstBaseURL: false)!
@@ -81,6 +83,7 @@ class SearchViewModel: ObservableObject {
         }.resume()
     }
 
+    // Stores restaurant data fetched from Yelp in the local API for cache.
     private func storeRestaurant(from business: YelpBusiness, completion: @escaping (Restaurant?) -> Void) {
         let restaurantDictionary: [String: Any] = [
             "name": business.name,
@@ -140,7 +143,8 @@ class SearchViewModel: ObservableObject {
             completion(nil)
         }
     }
-    
+
+    // Refreshes search results with new parameters without additional searches.
     func refreshSearchResults(term: String, price: String, sortBy: String) {
         if self.hasSearched {
             self.restaurants = []
@@ -148,6 +152,7 @@ class SearchViewModel: ObservableObject {
         }
     }
     
+    // Creates a unique cache key for storing search results.
     private func createCacheKey(queryParams: [String: Any]) -> String {
         let sortedParams = queryParams.sorted(by: { $0.key < $1.key })
         let paramString = sortedParams.map { "\($0.key)=\($0.value)" }.joined(separator: "&")
@@ -156,6 +161,7 @@ class SearchViewModel: ObservableObject {
         return "mobile-yelp-search-\(hash.compactMap { String(format: "%02x", $0) }.joined())"
     }
     
+    // Retrieves cached search results from a remote server.
     private func getFromCache(cacheKey: String, completion: @escaping ([Restaurant]) -> Void) {
         guard let url = URL(string: "https://fryfteats.com/api/cache/\(cacheKey)") else { return }
         var request = URLRequest(url: url)
@@ -179,6 +185,7 @@ class SearchViewModel: ObservableObject {
         }.resume()
     }
 
+    // Stores the search results to a remote cache.
     private func storeInCache(restaurants: [Restaurant], cacheKey: String) {
         guard let url = URL(string: "https://fryfteats.com/api/cache"), !restaurants.isEmpty else { return }
         var request = URLRequest(url: url)
@@ -200,10 +207,12 @@ class SearchViewModel: ObservableObject {
         }.resume()
     }
 
+    // Formats the price filter for API calls.
     private func formatPrice(_ price: String) -> String {
         return price == "All Prices" ? "1,2,3,4" : price.filter { $0 == "$" }.count.description
     }
 
+    // Converts a sort by filter into a query parameter.
     private func formatSortBy(_ sortBy: String) -> String {
         switch sortBy {
         case "Rating": return "rating"
