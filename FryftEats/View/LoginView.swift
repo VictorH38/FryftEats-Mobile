@@ -77,6 +77,15 @@ struct LoginView: View {
                 }
                 .padding()
                 
+                NavigationLink(destination: ContactView()) {
+                    Text("Contact Us")
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(Color(hex: "#FFCC00"))
+                        .cornerRadius(10)
+                }
+                
                 Spacer()
             }
             .padding()

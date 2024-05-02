@@ -32,6 +32,8 @@
 		57BAD2C92BE1C45300D9FE69 /* MessageHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAD2C82BE1C45300D9FE69 /* MessageHostingController.swift */; };
 		57BAD2CB2BE1E00100D9FE69 /* MainTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAD2CA2BE1E00100D9FE69 /* MainTabViewModel.swift */; };
 		57BAD2CD2BE2DF9100D9FE69 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAD2CC2BE2DF9000D9FE69 /* ViewExtensions.swift */; };
+		57BAD2CF2BE34C5300D9FE69 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAD2CE2BE34C5300D9FE69 /* ContactView.swift */; };
+		57BAD2D12BE34C7000D9FE69 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BAD2D02BE34C7000D9FE69 /* ContactViewModel.swift */; };
 		57CD455C2BDEEE8600E01778 /* FryftEatsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CD455B2BDEEE8600E01778 /* FryftEatsApp.swift */; };
 		57CD45602BDEEE8900E01778 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CD455F2BDEEE8900E01778 /* Assets.xcassets */; };
 		57CD45632BDEEE8900E01778 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CD45622BDEEE8900E01778 /* Preview Assets.xcassets */; };
@@ -100,6 +102,8 @@
 		57BAD2C82BE1C45300D9FE69 /* MessageHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHostingController.swift; sourceTree = "<group>"; };
 		57BAD2CA2BE1E00100D9FE69 /* MainTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewModel.swift; sourceTree = "<group>"; };
 		57BAD2CC2BE2DF9000D9FE69 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		57BAD2CE2BE34C5300D9FE69 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
+		57BAD2D02BE34C7000D9FE69 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
 		57CD45582BDEEE8600E01778 /* FryftEats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FryftEats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57CD455B2BDEEE8600E01778 /* FryftEatsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FryftEatsApp.swift; sourceTree = "<group>"; };
 		57CD455F2BDEEE8900E01778 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -245,6 +249,7 @@
 				579430442BE0B3C50012DB89 /* LyftRideButton.swift */,
 				57BAD2C02BE17EA300D9FE69 /* ShareButton.swift */,
 				57BAD2C42BE19CC500D9FE69 /* ReportView.swift */,
+				57BAD2CE2BE34C5300D9FE69 /* ContactView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 				5794303F2BE089420012DB89 /* RestaurantDetailsViewModel.swift */,
 				57BAD2C62BE19D4400D9FE69 /* ReportViewModel.swift */,
 				57BAD2CA2BE1E00100D9FE69 /* MainTabViewModel.swift */,
+				57BAD2D02BE34C7000D9FE69 /* ContactViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -565,6 +571,7 @@
 				57CD45932BDEF3E800E01778 /* Report.swift in Sources */,
 				5794302E2BE00F6A0012DB89 /* RestaurantCard.swift in Sources */,
 				5794303E2BE06C050012DB89 /* YelpBusiness.swift in Sources */,
+				57BAD2D12BE34C7000D9FE69 /* ContactViewModel.swift in Sources */,
 				57CD45912BDEF3DB00E01778 /* Comment.swift in Sources */,
 				57CD455C2BDEEE8600E01778 /* FryftEatsApp.swift in Sources */,
 				579430322BE010400012DB89 /* RestaurantViewModel.swift in Sources */,
@@ -577,6 +584,7 @@
 				5794303C2BE06BCD0012DB89 /* SearchViewModel.swift in Sources */,
 				579430452BE0B3C50012DB89 /* LyftRideButton.swift in Sources */,
 				579430282BDF194F0012DB89 /* FavoritesView.swift in Sources */,
+				57BAD2CF2BE34C5300D9FE69 /* ContactView.swift in Sources */,
 				57CD459E2BDEFF3C00E01778 /* LoginView.swift in Sources */,
 				5794303A2BE0570F0012DB89 /* FavoritesViewModel.swift in Sources */,
 				57CD459A2BDEFEE200E01778 /* LoginViewModel.swift in Sources */,
@@ -743,7 +751,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"FryftEats/Preview Content\"";
 				DEVELOPMENT_TEAM = 22UHL6F4N7;
 				ENABLE_PREVIEWS = YES;
@@ -782,7 +790,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"FryftEats/Preview Content\"";
 				DEVELOPMENT_TEAM = 22UHL6F4N7;
 				ENABLE_PREVIEWS = YES;
