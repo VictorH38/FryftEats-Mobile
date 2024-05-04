@@ -29,15 +29,15 @@ class SearchViewModel: ObservableObject {
         ]
         
         let cacheKey = createCacheKey(queryParams: queryParams)
-        getFromCache(cacheKey: cacheKey) { cachedRestaurants in
-            if !cachedRestaurants.isEmpty {
-                DispatchQueue.main.async {
-                    self.restaurants = cachedRestaurants
-                    self.hasSearched = true
-                }
-            } else {
-                self.fetchRestaurants(queryParams: queryParams, cacheKey: cacheKey)
+        let cachedRestaurants = getFromCache(cacheKey: cacheKey)
+        
+        if cachedRestaurants != nil {
+            DispatchQueue.main.async {
+                self.restaurants = cachedRestaurants!
+                self.hasSearched = true
             }
+        } else {
+            self.fetchRestaurants(queryParams: queryParams, cacheKey: cacheKey)
         }
     }
 
@@ -163,27 +163,41 @@ class SearchViewModel: ObservableObject {
     }
     
     // Retrieves cached search results from a remote server.
-    private func getFromCache(cacheKey: String, completion: @escaping ([Restaurant]) -> Void) {
-        guard let url = URL(string: "https://fryfteats.com/api/cache/\(cacheKey)") else { return }
+    private func getFromCache(cacheKey: String) -> [Restaurant]? {
+        guard let url = URL(string: "https://fryfteats.com/api/cache/\(cacheKey)") else { return nil }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
 
+        var restaurants: [Restaurant]? = nil
+        let semaphore = DispatchSemaphore(value: 0)
+
         URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
-                print("Error fetching cache: \(error?.localizedDescription ?? "Unknown error")")
-                completion([])
+            defer { semaphore.signal() }
+            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                print("No response received.")
                 return
             }
             
-            do {
-                let restaurants = try JSONDecoder().decode([Restaurant].self, from: data)
-                completion(restaurants)
-            } catch {
-                print("Failed to decode cached data: \(error)")
-                completion([])
+            if httpResponse.statusCode == 200 {
+                guard let data = data else {
+                    print("No data received for HTTP status 200.")
+                    return
+                }
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .flexibleISO8601
+                    
+                    restaurants = try decoder.decode([Restaurant].self, from: data)
+                } catch {
+                    print("Failed to decode cached data: \(error)")
+                }
             }
         }.resume()
+        
+        semaphore.wait()
+        return restaurants
     }
 
     // Stores the search results to a remote cache.
