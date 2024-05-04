@@ -15,30 +15,62 @@ class SearchViewModel: ObservableObject {
 
     // Initiates a search for restaurants with specified criteria.
     func searchRestaurants(term: String, price: String, sortBy: String) {
-        let formattedPrice = formatPrice(price)
-        let sortByParam = formatSortBy(sortBy)
+        let priceMapping = ["All Prices": "0", "$": "1", "$$": "2", "$$$": "3", "$$$$": "4"]
+        let sortMapping = ["Best Match": "best_match", "Review Count": "review_count", "Rating": "rating", "Distance": "distance"]
+
+        let apiUrl = "https://fryfteats.com/api/search"
+        guard let url = URL(string: apiUrl) else {
+            print("Invalid URL")
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
         
-        let queryParams: [String: Any] = [
+        let json: [String: Any] = [
             "term": term,
-            "latitude": "34.0259",
-            "longitude": "-118.2853",
-            "price": formattedPrice,
-            "sort_by": sortByParam,
-            "radius": "1500",
-            "limit": "50"
+            "price": priceMapping[price] ?? "0",
+            "sort_by": sortMapping[sortBy] ?? "best_match"
         ]
         
-        let cacheKey = createCacheKey(queryParams: queryParams)
-        let cachedRestaurants = getFromCache(cacheKey: cacheKey)
-        
-        if cachedRestaurants != nil {
-            DispatchQueue.main.async {
-                self.restaurants = cachedRestaurants!
-                self.hasSearched = true
-            }
-        } else {
-            self.fetchRestaurants(queryParams: queryParams, cacheKey: cacheKey)
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: json) else {
+            print("Failed to encode JSON")
+            return
         }
+
+        request.httpBody = jsonData
+
+        URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+            guard let data = data, error == nil, let response = response as? HTTPURLResponse else {
+                DispatchQueue.main.async {
+                    print("Network or server error occurred.")
+                }
+                return
+            }
+
+            if response.statusCode == 200 {
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .flexibleISO8601
+                    
+                    let decodedRestaurants = try decoder.decode([Restaurant].self, from: data)
+                    DispatchQueue.main.async {
+                        self?.restaurants = decodedRestaurants
+                        self?.hasSearched = true
+                    }
+                } catch {
+                    DispatchQueue.main.async {
+                        print("Failed to decode search results.")
+                    }
+                }
+            } else {
+                DispatchQueue.main.async {
+                    print("Failed to fetch search results: \(response.statusCode)")
+                }
+            }
+        }.resume()
     }
 
     // Fetches restaurant data from Yelp API based on search parameters.
